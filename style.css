@@ -1,1 +1,10 @@
-#header {}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 200px;
+    width: 25;
+    background-color: aqua;
+}
