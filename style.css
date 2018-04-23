@@ -8,3 +8,42 @@ header {
     width: 25;
     background-color: aqua;
 }
+
+/***** index *****/
+
+#splash {
+    width: 100%;
+    height: 100vh;
+    background-color: aqua;
+}
+
+#navindex {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.navbutton {
+    margin: 0;
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    margin: 20px;
+
+    border-radius: 50%;
+
+
+}
+
+.navbutton:hover {
+    transform: scale(1.1, 1.1);
+    transition: transform 0.1s;
+}
+
+footer {
+    height: 100px;
+    width: 100%;
+    background-color: aqua;
+
+}
