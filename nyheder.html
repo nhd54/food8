@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
     <title></title>
 </head>
 
@@ -12,4 +13,15 @@
 </body>
 
 </html>
-<link rel="stylesheet" href="">
+
+<script>
+    let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/nyheder";
+    let nyheder = [];
+    document.addEventListener("DOMContentloaded", hentJson);
+
+    async function hentJson() {
+        let dataJson = await fetch(jsonurl);
+
+    }
+
+</script>
