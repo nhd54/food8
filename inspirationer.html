@@ -35,14 +35,11 @@
 
     <script>
         let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/inspiration";
-        let Nyheder = [];
+        let Inspirationer = [];
         let display = document.querySelector("section");
         let template = document.querySelector("template");
-
         document.addEventListener("DOMContentLoaded", hentjson);
-
         async function hentjson() {
-
             let datajson = await fetch(jsonurl);
             Inspirationer = await datajson.json();
             console.log(inspirationer);
@@ -70,7 +67,6 @@
 
 
         }
-
     </script>
 </body>
 
