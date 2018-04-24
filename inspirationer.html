@@ -44,7 +44,7 @@
         async function hentjson() {
 
             let datajson = await fetch(jsonurl);
-            Nyheder = await datajson.json();
+            Inspirationer = await datajson.json();
             console.log(inspirationer);
 
 
@@ -52,17 +52,17 @@
         }
 
 
-        function VisNyheder() {
+        function VisInspirationer() {
 
-            Nyheder.forEach(Nyhed => {
-                console.log(Nyhed);
-                let str = Nyhed.content.rendered;
+            Inspirationer.forEach(Inspiration => {
+                console.log(Inspiration);
+                let str = Inspiration.content.rendered;
                 let rest = str.substr(0, 250)
                 let klon = template.cloneNode(true).content;
                 console.log(klon);
-                klon.querySelector("h2").innerHTML = Nyhed.title.rendered;
+                klon.querySelector("h2").innerHTML = Inspiration.title.rendered;
                 klon.querySelector("p").innerHTML = rest + " ...";
-                klon.querySelector(".link").innerHTML = '<a href=nyhed.html?id=' + Nyhed.id + ">Læs Mere</a>";
+                klon.querySelector(".link").innerHTML = '<a href=Inspiration.html?id=' + Inspiration.id + ">Læs Mere</a>";
 
                 display.appendChild(klon);
 
@@ -75,7 +75,3 @@
 </body>
 
 </html>
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
