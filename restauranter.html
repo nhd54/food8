@@ -2,26 +2,74 @@
 <html id="restauranter" lang="da">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food8 - Din digitale foodcourt</title>
-    <link rel="stylesheet" href="style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Food8 - Din digitale foodcourt</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header></header>
-    <nav>
+	<header></header>
+	<nav>
 
-        <div id="button1"></div>
-        <div id="button2"></div>
-        <div id="button3"></div>
-        <div id="button4"></div>
-    </nav>
+		<div id="button1"></div>
+		<div id="button2"></div>
+		<div id="button3"></div>
+		<div id="button4"></div>
+	</nav>
+
+	<section>
 
 
-    <footer></footer>
 
-    <script></script>
+		<template>
+         <div class="newscontainer">
+		<article class="newsarticle">
+
+
+		</article>
+               </div>
+	</template>
+
+
+	</section>
+
+
+
+	<footer></footer>
+
+	<script>
+		let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/restaurant";
+		let restauranter = [];
+		let display = document.querySelector("section");
+		let template = document.querySelector("template");
+		document.addEventListener("DOMContentLoaded", hentjson);
+		async function hentjson() {
+			let datajson = await fetch(jsonurl);
+			restauranter = await datajson.json();
+			console.log(restauranter);
+
+
+			VisRestauranter();
+		}
+
+
+		function VisRestauranter() {
+
+			restauranter.forEach(restaurant => {
+				console.log(restaurant);
+
+				let klon = template.cloneNode(true).content;
+				console.log(klon);
+
+				klon.querySelector(".newscontainer").style.backgroundImage = "url(" + restaurant.better_featured_image.media_details.sizes.medium.source_url + ")"
+				display.appendChild(klon);
+
+			});
+
+
+		}
+	</script>
 </body>
 
 
