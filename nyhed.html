@@ -3,26 +3,26 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food8 - Din digitale foodcourt</title>
-    <link rel="stylesheet" href="style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Food8 - Din digitale foodcourt</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header></header>
-    <section id="description">
-        <article>
+	<header></header>
+	<section id="description">
+		<article class="nyhed">
 
 
 
-            <section>
+			<section>
 
-            </section>
+			</section>
 
 
-            <template>
-		<article>
+			<template>
+		<article class="nyhed">
 			<div class="big_img">
 
 			</div>
@@ -34,50 +34,50 @@
 
 
 
-        </article>
-    </section>
+		</article>
+	</section>
 
-    <footer></footer>
+	<footer></footer>
 
-    <script>
-        let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/nyheder";
-        let Nyheder = [];
-        let display = document.querySelector("section");
-        let template = document.querySelector("template");
+	<script>
+		let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/nyheder";
+		let Nyheder = [];
+		let display = document.querySelector("section");
+		let template = document.querySelector("template");
 
-        document.addEventListener("DOMContentLoaded", hentjson);
+		document.addEventListener("DOMContentLoaded", hentjson);
 
-        let nyheder;
-        async function hentjson() {
-            let datajson = await fetch(jsonurl);
-            Nyheder = await datajson.json();
-            hvisenkelt();
+		let nyheder;
+		async function hentjson() {
+			let datajson = await fetch(jsonurl);
+			Nyheder = await datajson.json();
+			hvisenkelt();
 
-        }
+		}
 
-        function hvisenkelt() {
+		function hvisenkelt() {
 
-            let urlParams = new URLSearchParams(window.location.search);
-            let urlid = urlParams.get("id");
-            let klon = template.cloneNode(true).content;
-            console.log(urlid)
+			let urlParams = new URLSearchParams(window.location.search);
+			let urlid = urlParams.get("id");
+			let klon = template.cloneNode(true).content;
+			console.log(urlid)
 
-            let single = Nyheder.find(Nyhed => {
-                // hvis my_id = ret.id så hvis indhold i modalvindue
-                if (urlid == Nyhed.id) {
-                    klon.querySelector("p").innerHTML = Nyhed.content.rendered;
-                    klon.querySelector(".big_img").innerHTML = '<img src="' + Nyhed.better_featured_image.source_url + '" />'
+			let single = Nyheder.find(Nyhed => {
+				// hvis my_id = ret.id så hvis indhold i modalvindue
+				if (urlid == Nyhed.id) {
+					klon.querySelector("p").innerHTML = Nyhed.content.rendered;
+					klon.querySelector(".big_img").innerHTML = '<img src="' + Nyhed.better_featured_image.source_url + ' " />'
 
-                    console.log("jeg virker");
+					console.log("jeg virker");
 
-                    display.appendChild(klon);
-                }
-            });
+					display.appendChild(klon);
+				}
+			});
 
-        }
-        //console.log(my_id);
+		}
+		//console.log(my_id);
 
-    </script>
+	</script>
 </body>
 
 </html>
