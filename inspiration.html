@@ -2,28 +2,30 @@
 <html id="inspiration" lang="da">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food8 - Din digitale foodcourt</title>
-    <link rel="stylesheet" href="style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Food8 - Din digitale foodcourt</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header> </header>
-    <section id="description">
-        <article>
-
-
-
-            <section>
-
-            </section>
-
-
-            <template>
+	<header> </header>
+	<section id="description">
 		<article>
 
+
+
+			<section>
+
+			</section>
+
+
+			<template>
+		<article>
+			<div class="big_img">
+
+			</div>
 			<p></p>
 		</article>
 	</template>
@@ -32,47 +34,47 @@
 
 
 
-        </article>
-    </section>
+		</article>
+	</section>
 
-    <footer></footer>
-    <script>
-        let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/inspiration";
-        let Inspirationer = [];
-        let display = document.querySelector("section");
-        let template = document.querySelector("template");
+	<footer></footer>
+	<script>
+		let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/inspiration";
+		let Inspirationer = [];
+		let display = document.querySelector("section");
+		let template = document.querySelector("template");
 
-        document.addEventListener("DOMContentLoaded", hentjson);
+		document.addEventListener("DOMContentLoaded", hentjson);
 
-        async function hentjson() {
+		async function hentjson() {
 
-            let datajson = await fetch(jsonurl);
-            Inspirationer = await datajson.json();
-            hvisenkelt();
+			let datajson = await fetch(jsonurl);
+			Inspirationer = await datajson.json();
+			hvisenkelt();
 
-        }
+		}
 
-        function hvisenkelt() {
+		function hvisenkelt() {
 
-            let urlParams = new URLSearchParams(window.location.search);
-            let urlid = urlParams.get("id");
-            let klon = template.cloneNode(true).content;
-            console.log(urlid)
+			let urlParams = new URLSearchParams(window.location.search);
+			let urlid = urlParams.get("id");
+			let klon = template.cloneNode(true).content;
+			console.log(urlid)
 
-            let single = Inspirationer.find(Inspiration => {
-                // hvis my_id = ret.id så hvis indhold i modalvindue
-                if (urlid == Inspiration.id) {
-                    klon.querySelector("p").innerHTML = Inspiration.content.rendered;
-                    console.log("jeg virker");
+			let single = Inspirationer.find(Inspiration => {
+				// hvis my_id = ret.id så hvis indhold i modalvindue
+				if (urlid == Inspiration.id) {
+					klon.querySelector("p").innerHTML = Inspiration.content.rendered;
+					klon.querySelector(".big_img").innerHTML = '<img src="' + Inspiration.better_featured_image.source_url + '" />'
+					console.log("jeg virker");
 
-                    display.appendChild(klon);
-                }
-            });
+					display.appendChild(klon);
+				}
+			});
 
-        }
-        //console.log(my_id);
-
-    </script>
+		}
+		//console.log(my_id);
+	</script>
 </body>
 
 </html>
