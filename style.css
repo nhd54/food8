@@ -33,6 +33,12 @@ header {
 
 }
 
+.icon {
+    width: auto;
+    height: 5vw;
+
+}
+
 
 footer {
     height: 100px;
