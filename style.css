@@ -103,7 +103,6 @@ footer {
 
 article {
 	padding: 10px;
-	background-color: aliceblue;
 	font-family: 'HKGrotesk';
 }
 
@@ -135,4 +134,8 @@ article a:hover {
 .nyhed {
 	padding: 0px;
 
+}
+
+.newsarticle {
+	background-color: aliceblue;
 }
