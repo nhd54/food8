@@ -34,8 +34,8 @@ header {
 }
 
 .icon {
-    width: 10vw;
-
+    width: auto;
+    height: 5vw;
 
 }
 
