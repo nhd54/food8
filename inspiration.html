@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="da">
+<html id="inspiration" lang="da">
 
 <head>
     <meta charset="utf-8">
@@ -9,7 +9,65 @@
 </head>
 
 <body>
+    <section id="description">
+        <article>
 
+
+
+            <section>
+
+            </section>
+
+
+            <template>
+		<article>
+
+			<p></p>
+		</article>
+	</template>
+
+
+
+
+
+        </article>
+    </section>
+    <script>
+        let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/inspiration";
+        let Inspirationer = [];
+        let display = document.querySelector("section");
+        let template = document.querySelector("template");
+
+        document.addEventListener("DOMContentLoaded", hentjson);
+
+        async function hentjson() {
+
+            let datajson = await fetch(jsonurl);
+            Inspirationer = await datajson.json();
+            hvisenkelt();
+
+        }
+
+        function hvisenkelt() {
+
+            let urlParams = new URLSearchParams(window.location.search);
+            let urlid = urlParams.get("id");
+            let klon = template.cloneNode(true).content;
+            console.log(urlid)
+
+            let single = Inspirationer.find(Inspiration => {
+                // hvis my_id = ret.id så hvis indhold i modalvindue
+                if (urlid == Inspiration.id) {
+                    klon.querySelector("p").innerHTML = Inspiration.content.rendered;
+                    console.log("jeg virker");
+
+                    display.appendChild(klon);
+                }
+            });
+
+        }
+        //console.log(my_id);
+    </script>
 </body>
 
 </html>
