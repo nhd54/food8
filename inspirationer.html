@@ -10,8 +10,68 @@
 
 <body>
     <header></header>
+    <section>
+
+        <template>
+         <div class="newscontainer">
+		<article class="newsarticle">
+         <div class="beskrivelse">
+         	<h2></h2>
+         	<p></p>
+         	<div class="link"></div>
+         </div>
+
+		</article>
+               </div>
+	</template>
+
+
+    </section>
+
     <footer></footer>
+
+
+
+
+    <script>
+        let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/inspiration";
+        let Nyheder = [];
+        let display = document.querySelector("section");
+        let template = document.querySelector("template");
+
+        document.addEventListener("DOMContentLoaded", hentjson);
+
+        async function hentjson() {
+
+            let datajson = await fetch(jsonurl);
+            Nyheder = await datajson.json();
+            console.log(inspirationer);
+
+
+            VisInspirationer();
+        }
+
+
+        function VisNyheder() {
+
+            Nyheder.forEach(Nyhed => {
+                console.log(Nyhed);
+                let str = Nyhed.content.rendered;
+                let rest = str.substr(0, 250)
+                let klon = template.cloneNode(true).content;
+                console.log(klon);
+                klon.querySelector("h2").innerHTML = Nyhed.title.rendered;
+                klon.querySelector("p").innerHTML = rest + " ...";
+                klon.querySelector(".link").innerHTML = '<a href=nyhed.html?id=' + Nyhed.id + ">Læs Mere</a>";
+
+                display.appendChild(klon);
+
+            });
+
+
+        }
+
+    </script>
 </body>
 
 </html>
-<link rel="stylesheet" href="">
