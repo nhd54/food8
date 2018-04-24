@@ -1,3 +1,16 @@
+/******* general******/
+
+h2 {
+    font-size: 1.3em;
+    text-align: center;
+    font-family: 'HKGrotesk';
+}
+
+p {
+    font-family: 'HKGrotesk';
+    font-size: 0.9em;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +22,7 @@
 }
 
 header {
-    height: 200px;
+    height: 150px;
     width: 100%;
     background-color: aqua;
 }
@@ -66,10 +79,19 @@ article {
     padding: 10px;
     background-color: aliceblue;
     font-family: 'HKGrotesk';
-    font-size: 0.9em;
 }
 
-h2 {
-    font-size: 1.3em;
-    text-align: center;
+article a {
+    font-size: 0.9em;
+    text-decoration: none;
+    font-weight: 800;
+    color: black;
+}
+
+article a:hover {
+    font-size: 1em;
+    text-decoration: none;
+    font-weight: 800;
+    transition: font-size 0.1s;
+
 }
