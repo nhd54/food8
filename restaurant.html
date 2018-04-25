@@ -2,25 +2,25 @@
 <html id="restaurant" lang="da">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Food8 - Din digitale foodcourt</title>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food8 - Din digitale foodcourt</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-	<header>
-		<div class="indexicon"><img src="images/logo/logo.png" alt="icon"></div>
-	</header>
-	<nav>
+    <header>
+        <div class="indexicon"><a href="index.html"><img src="images/logo/logo.png" alt="icon"></a></div>
+    </header>
+    <nav>
 
-		<div id="button1"></div>
-		<div id="button2"></div>
-		<div id="button3"></div>
-		<div id="button4"></div>
-	</nav>
-	<section>
-		<template>
+        <div id="button1"></div>
+        <div id="button2"></div>
+        <div id="button3"></div>
+        <div id="button4"></div>
+    </nav>
+    <section>
+        <template>
    <section id="banner">
    	 <div class="big_img"></div>
    </section>
@@ -43,49 +43,48 @@
 
     </template>
 
-	</section>
+    </section>
 
-	<footer></footer>
-
-
-	<script>
-		let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/restaurant";
-		let Restauranter = [];
-		let display = document.querySelector("section");
-		let template = document.querySelector("template");
-
-		document.addEventListener("DOMContentLoaded", hentjson);
+    <footer></footer>
 
 
-		async function hentjson() {
-			let datajson = await fetch(jsonurl);
-			Restauranter = await datajson.json();
-			hvisenkelt();
+    <script>
+        let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/restaurant";
+        let Restauranter = [];
+        let display = document.querySelector("section");
+        let template = document.querySelector("template");
 
-		}
+        document.addEventListener("DOMContentLoaded", hentjson);
 
-		function hvisenkelt() {
 
-			let urlParams = new URLSearchParams(window.location.search);
-			let urlid = urlParams.get("id");
-			let klon = template.cloneNode(true).content;
-			console.log(urlid)
+        async function hentjson() {
+            let datajson = await fetch(jsonurl);
+            Restauranter = await datajson.json();
+            hvisenkelt();
 
-			let single = Restauranter.find(Restaurant => {
-				// hvis my_id = ret.id så hvis indhold i modalvindue
-				if (urlid == Restaurant.id) {
-					klon.querySelector("p").innerHTML = Restaurant.content.rendered;
-					klon.querySelector(".big_img").innerHTML = '<img src="' + Restaurant.better_featured_image.source_url + ' " />'
+        }
 
-					console.log("jeg virker");
+        function hvisenkelt() {
 
-					display.appendChild(klon);
-				}
-			});
+            let urlParams = new URLSearchParams(window.location.search);
+            let urlid = urlParams.get("id");
+            let klon = template.cloneNode(true).content;
+            console.log(urlid)
 
-		}
+            let single = Restauranter.find(Restaurant => {
+                // hvis my_id = ret.id så hvis indhold i modalvindue
+                if (urlid == Restaurant.id) {
+                    klon.querySelector("p").innerHTML = Restaurant.content.rendered;
+                    klon.querySelector(".big_img").innerHTML = '<img src="' + Restaurant.better_featured_image.source_url + ' " />'
 
-	</script>
+                    console.log("jeg virker");
+
+                    display.appendChild(klon);
+                }
+            });
+
+        }
+    </script>
 </body>
 
 
