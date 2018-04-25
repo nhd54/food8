@@ -2,15 +2,15 @@
 <html id="delikatesser" lang="">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title></title>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-	<header>
-		<nav>
+    <header>
+        <!--<nav>
 			<a href="nyheder.html">
             <img class="icon" src="images/icon/icon_menu_nyheder.svg" alt="">
         </a>
@@ -23,13 +23,13 @@
 			<a href="inspirationer.html">
     <img class="icon" src="images/icon/icon_menu_inspiration.svg" alt="">
 </a>
-		</nav>
-	</header>
-	<section>
+		</nav> -->
+    </header>
+    <section>
 
 
 
-		<template>
+        <template>
          <div class="rescontainer">
 		<article class="ressarticle">
 
@@ -39,48 +39,48 @@
 	</template>
 
 
-	</section>
+    </section>
 
 
-	<footer>
+    <footer>
 
-	</footer>
-
-
-
-	<script>
-		let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/delikatesse";
-		let Delikatesser = [];
-		let display = document.querySelector("section");
-		let template = document.querySelector("template");
-		document.addEventListener("DOMContentLoaded", hentjson);
-		async function hentjson() {
-			let datajson = await fetch(jsonurl);
-			Delikatesser = await datajson.json();
-			console.log(Delikatesser);
+    </footer>
 
 
-			VisDelikatesser();
-		}
+
+    <script>
+        let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/delikatesse";
+        let Delikatesser = [];
+        let display = document.querySelector("section");
+        let template = document.querySelector("template");
+        document.addEventListener("DOMContentLoaded", hentjson);
+        async function hentjson() {
+            let datajson = await fetch(jsonurl);
+            Delikatesser = await datajson.json();
+            console.log(Delikatesser);
 
 
-		function VisDelikatesser() {
-
-			Delikatesser.forEach(Delikatesse => {
-				console.log(Delikatesse);
-				let str = Delikatesse.content.rendered;
-				let rest = str.substr(0, 250)
-				let klon = template.cloneNode(true).content;
-				console.log(klon);
-				klon.querySelector(".rescontainer").style.backgroundImage = "url(" + Delikatesse.better_featured_image.media_details.sizes.medium_large.source_url + ")"
-
-				display.appendChild(klon);
-
-			});
+            VisDelikatesser();
+        }
 
 
-		}
-	</script>
+        function VisDelikatesser() {
+
+            Delikatesser.forEach(Delikatesse => {
+                console.log(Delikatesse);
+                let str = Delikatesse.content.rendered;
+                let rest = str.substr(0, 250)
+                let klon = template.cloneNode(true).content;
+                console.log(klon);
+                klon.querySelector(".rescontainer").style.backgroundImage = "url(" + Delikatesse.better_featured_image.media_details.sizes.medium_large.source_url + ")"
+
+                display.appendChild(klon);
+
+            });
+
+
+        }
+    </script>
 
 
 </body>
