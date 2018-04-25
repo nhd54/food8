@@ -108,11 +108,11 @@ footer {
     margin: 0;
     height: 50px;
     width: 50px;
-    background-color: red;
+
     margin: 20px;
 
     border-radius: 50%;
-    =======height: auto;
+    height: auto;
     width: 130px;
 
     margin: 20px;
@@ -157,8 +157,8 @@ article a:hover {
 }
 
 #newscontainerbg {
-    margin: 3px;
-    background-color: rgba(177, 199, 211, 0.70);
+    margin: 5px;
+    background-color: rgba(177, 199, 211, 0.59);
     padding: 5px;
 
 }
