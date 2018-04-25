@@ -19,7 +19,11 @@
 		<div id="button3"></div>
 		<div id="button4"></div>
 	</nav>
-	<template>
+	<section>
+		<template>
+   <section id="banner">
+   	 <div class="big_img"></div>
+   </section>
     <section id="description">
         <article>
             <h2 id="restauranttitle"> - </h2>
@@ -38,8 +42,50 @@
     </section>
 
     </template>
+
+	</section>
+
 	<footer></footer>
-	<script></script>
+
+
+	<script>
+		let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/restaurant";
+		let Restauranter = [];
+		let display = document.querySelector("section");
+		let template = document.querySelector("template");
+
+		document.addEventListener("DOMContentLoaded", hentjson);
+
+
+		async function hentjson() {
+			let datajson = await fetch(jsonurl);
+			Restauranter = await datajson.json();
+			hvisenkelt();
+
+		}
+
+		function hvisenkelt() {
+
+			let urlParams = new URLSearchParams(window.location.search);
+			let urlid = urlParams.get("id");
+			let klon = template.cloneNode(true).content;
+			console.log(urlid)
+
+			let single = Restauranter.find(Restaurant => {
+				// hvis my_id = ret.id så hvis indhold i modalvindue
+				if (urlid == Restaurant.id) {
+					klon.querySelector("p").innerHTML = Restaurant.content.rendered;
+					klon.querySelector(".big_img").innerHTML = '<img src="' + Restaurant.better_featured_image.source_url + ' " />'
+
+					console.log("jeg virker");
+
+					display.appendChild(klon);
+				}
+			});
+
+		}
+
+	</script>
 </body>
 
 
