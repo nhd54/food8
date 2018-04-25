@@ -318,3 +318,12 @@ nyhed a {
     box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.20);
 
 }
+
+
+.nyhedsbrev {
+    top: 120vw;
+    left: 85vw;
+    position: fixed;
+    z-index: 10;
+    width: 10vw;
+}
