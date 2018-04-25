@@ -8,8 +8,7 @@
 body {
     background-image: url(images/baggrund/baggrund_mobil_side.jpg);
     background-size: cover;
-    <<<<<<< HEAD=======font-family: 'HKGrotesk';
-    > > > > > > > origin/master
+    font-family: 'HKGrotesk';
 }
 
 h2 {
@@ -30,18 +29,10 @@ p {
 }
 
 header {
-    <<<<<<< HEAD <<<<<<< HEAD margin-top: 5vw;
-    height: 150px;
-    width: 100%;
-    =======height: 150px;
-    width: 100%;
-    > > > > > > > origin/master=======margin-top: 5vw;
-    height: 150px;
-    width: 100%;
-    height: 150px;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
     width: 100%;
 
-    > > > > > > > origin/master
 }
 
 .icon {
@@ -56,6 +47,7 @@ footer {
     width: 100%;
     background-color: blue;
     background-color: rgba(177, 199, 211, 0.59);
+    color: #475665;
 
 }
 
@@ -157,10 +149,10 @@ article a:hover {
 }
 
 #newscontainerbg {
-    margin: 5px;
-    background-color: rgba(177, 199, 211, 0.59);
+    margin: 10px;
+    background-color: rgba(057, 087, 097, 0.9);
     padding: 5px;
-
+    box-shadow:
 }
 
 .big_img img {
@@ -186,9 +178,9 @@ article a:hover {
 }
 
 .rescontainer {
-    margin: 80px;
-    padding: 35px;
+    margin: 25px;
+    background-position: center;
+    padding: 20px;
+    height: 200px;
     background-repeat: no-repeat;
-
-
 }
