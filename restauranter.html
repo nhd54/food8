@@ -2,50 +2,50 @@
 <html id="restauranter" lang="da">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food8 - Din digitale foodcourt</title>
-    <link rel="stylesheet" href="style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Food8 - Din digitale foodcourt</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="accordion">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-    </div>
+	<div class="accordion">
+		<div class="bar1"></div>
+		<div class="bar2"></div>
+		<div class="bar3"></div>
+	</div>
 
 
-    <nav id="normalMenu">
-        <div class="MenuBackdrop"> </div>
-        <div class="buttons">
-            <a href="nyheder.html"><button class="buttonnews">Nyheder</button></a>
-            <a href="restauranter.html"><button class="buttonres">Restauranter</button></a>
-            <a href="delikatesser.html"><button class="buttondeli">Delikatesser</button></a>
-            <a href="inspirationer.html"><button class="buttoninsp">Inspiration</button></a>
+	<nav id="normalMenu">
+		<div class="MenuBackdrop"> </div>
+		<div class="buttons">
+			<a href="nyheder.html"><button class="buttonnews">Nyheder</button></a>
+			<a href="restauranter.html"><button class="buttonres">Restauranter</button></a>
+			<a href="delikatesser.html"><button class="buttondeli">Delikatesser</button></a>
+			<a href="inspirationer.html"><button class="buttoninsp">Inspiration</button></a>
 
-        </div>
-    </nav>
+		</div>
+	</nav>
 
-    <header>
-        <div class="indexicon"><a href="index.html"><img src="images/logo/logo.png" alt="icon"></a></div>
-    </header>
+	<header>
+		<div class="indexicon"><a href="index.html"><img src="images/logo/logo.png" alt="icon"></a></div>
+	</header>
 
-    <nav>
+	<nav>
 
-        <div id="button1"></div>
-        <div id="button2"></div>
-        <div id="button3"></div>
-        <div id="button4"></div>
-    </nav>
-
-
+		<div id="button1"></div>
+		<div id="button2"></div>
+		<div id="button3"></div>
+		<div id="button4"></div>
+	</nav>
 
 
 
-    <section id="rescontainerbg">
 
-        <template>
+
+	<section id="rescontainerbg">
+
+		<template>
  		<a data-single href="">
         <div class="bigcontainer">
          <div class="rescontainer">
@@ -62,72 +62,73 @@
 	</template>
 
 
-    </section>
+	</section>
 
 
-    <div class="nyhedsbrev">
-        <img src="images/nav_circles/nhs_brev.svg" alt="">
-    </div>
+	<div class="nyhedsbrev">
+		<img src="images/nav_circles/nhs_brev.svg" alt="">
+	</div>
 
-    <footer>
-        <div class="footercontent"> OM <img src="images/logo/logo.png" class="footericon" alt=""></div>
-
-
-        <p>
-            info@food8.dk<br> Food8 ApS — Langelinie 10, 2100 København Ø<br> — CVR nr. 39306999<br></p>
-        <img src="images/logo/stroem_logo.png" alt="stroem" class="stroem">
-        <div class="footercontact">
-            <a href="https://www.facebook.com/food8dk/"><img src="images/icon/facebook.png" alt="facelogo"></a>
-            <a href="https://www.instagram.com/food8dk/"><img src="images/icon/instagram-colourful-icon.png" alt="instalogo"></a></div>
-    </footer>
-
-    <script>
-        let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/restaurant";
-        let restauranter = [];
-        let display = document.querySelector("section");
-        let template = document.querySelector("template");
-        document.addEventListener("DOMContentLoaded", hentjson);
-        async function hentjson() {
-            let datajson = await fetch(jsonurl);
-            restauranter = await datajson.json();
-            console.log(restauranter);
+	<footer>
+		<div class="footercontent"> <a href="om.html"> OM <img src="images/logo/logo.png" class="footericon" alt="">  </a></div>
 
 
-            VisRestauranter();
-        }
+		<p>
+			info@food8.dk<br> Food8 ApS — Langelinie 10, 2100 København Ø<br> — CVR nr. 39306999<br></p>
+		<img src="images/logo/stroem_logo.png" alt="stroem" class="stroem">
+		<div class="footercontact">
+			<a href="https://www.facebook.com/food8dk/"><img src="images/icon/facebook.png" alt="facelogo"></a>
+			<a href="https://www.instagram.com/food8dk/"><img src="images/icon/instagram-colourful-icon.png" alt="instalogo"></a></div>
+	</footer>
+
+	<script>
+		let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/restaurant";
+		let restauranter = [];
+		let display = document.querySelector("section");
+		let template = document.querySelector("template");
+		document.addEventListener("DOMContentLoaded", hentjson);
+		async function hentjson() {
+			let datajson = await fetch(jsonurl);
+			restauranter = await datajson.json();
+			console.log(restauranter);
 
 
-        function VisRestauranter() {
-
-            restauranter.forEach(restaurant => {
-                console.log(restaurant);
-
-                let klon = template.cloneNode(true).content;
-                console.log(klon);
-
-                klon.querySelector(".rescontainer").style.backgroundImage = "url(" + restaurant.better_featured_image.media_details.sizes.medium_large.source_url + ")"
-                klon.querySelector("[data-single]").href = "restaurant.html?id=" + restaurant.id;
-                display.appendChild(klon);
-
-            });
+			VisRestauranter();
+		}
 
 
-        }
+		function VisRestauranter() {
 
-        let acc = document.getElementsByClassName("accordion");
-        var i;
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                let panel = this.nextElementSibling;
-                if (panel.style.display === "inline-block") {
-                    panel.style.display = "none";
-                } else {
-                    panel.style.display = "inline-block";
-                }
-            });
-        }
-    </script>
+			restauranter.forEach(restaurant => {
+				console.log(restaurant);
+
+				let klon = template.cloneNode(true).content;
+				console.log(klon);
+
+				klon.querySelector(".rescontainer").style.backgroundImage = "url(" + restaurant.better_featured_image.media_details.sizes.medium_large.source_url + ")"
+				klon.querySelector("[data-single]").href = "restaurant.html?id=" + restaurant.id;
+				display.appendChild(klon);
+
+			});
+
+
+		}
+
+		let acc = document.getElementsByClassName("accordion");
+		var i;
+		for (i = 0; i < acc.length; i++) {
+			acc[i].addEventListener("click", function() {
+				this.classList.toggle("active");
+				let panel = this.nextElementSibling;
+				if (panel.style.display === "inline-block") {
+					panel.style.display = "none";
+				} else {
+					panel.style.display = "inline-block";
+				}
+			});
+		}
+
+	</script>
 </body>
 
 
