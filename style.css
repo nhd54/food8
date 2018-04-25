@@ -273,8 +273,12 @@ nyhed a {
 
 }
 
+#description {
+    text-align: center;
+}
+
 .alignnone {
-    display: flex;
+
     align-content: center;
     width: 40vw;
     height: 50vw;
@@ -284,6 +288,7 @@ nyhed a {
 .maps iframe {
     width: 90vw;
     height: 300px;
+    float: right;
 }
 
 .bigcontainer {
