@@ -2,19 +2,19 @@
 <html id="inspirationer" lang="da">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Food8 - Din digitale foodcourt</title>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food8 - Din digitale foodcourt</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-	<header>
-		<div class="indexicon"><a href="index.html"><img src="images/logo/logo.png" alt="icon"></a></div>
-	</header>
-	<section id="rescontainerbg">
+    <header>
+        <div class="indexicon"><a href="index.html"><img src="images/logo/logo.png" alt="icon"></a></div>
+    </header>
+    <section id="rescontainerbg">
 
-		<template>
+        <template>
         <div id="newscontainerbg">
          <div class="newscontainer">
 		<article class="newsarticle">
@@ -35,58 +35,61 @@
 	</template>
 
 
-	</section>
+    </section>
+    <div class="nyhedsbrev">
+        <img src="images/nav_circles/nhs_brev.svg" alt="">
+    </div>
 
-	<footer>
-		<div class="footercontent"> OM <img src="images/logo/logo.png" class="footericon" alt=""></div>
-
-
-		<p>
-			info@food8.dk<br> Food8 ApS — Langelinie 10, 2100 København Ø<br> — CVR nr. 39306999<br></p>
-		<img src="images/logo/stroem_logo.png" alt="stroem" class="stroem">
-		<div class="footercontact">
-			<a href="https://www.facebook.com/food8dk/"><img src="images/icon/facebook.png" alt="facelogo"></a>
-			<a href="https://www.instagram.com/food8dk/"><img src="images/icon/instagram-colourful-icon.png" alt="instalogo"></a></div>
-	</footer>
+    <footer>
+        <div class="footercontent"> OM <img src="images/logo/logo.png" class="footericon" alt=""></div>
 
 
+        <p>
+            info@food8.dk<br> Food8 ApS — Langelinie 10, 2100 København Ø<br> — CVR nr. 39306999<br></p>
+        <img src="images/logo/stroem_logo.png" alt="stroem" class="stroem">
+        <div class="footercontact">
+            <a href="https://www.facebook.com/food8dk/"><img src="images/icon/facebook.png" alt="facelogo"></a>
+            <a href="https://www.instagram.com/food8dk/"><img src="images/icon/instagram-colourful-icon.png" alt="instalogo"></a></div>
+    </footer>
 
 
-	<script>
-		let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/inspiration";
-		let Inspirationer = [];
-		let display = document.querySelector("section");
-		let template = document.querySelector("template");
-		document.addEventListener("DOMContentLoaded", hentjson);
-		async function hentjson() {
-			let datajson = await fetch(jsonurl);
-			Inspirationer = await datajson.json();
-			console.log(inspirationer);
 
 
-			VisInspirationer();
-		}
+    <script>
+        let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/inspiration";
+        let Inspirationer = [];
+        let display = document.querySelector("section");
+        let template = document.querySelector("template");
+        document.addEventListener("DOMContentLoaded", hentjson);
+        async function hentjson() {
+            let datajson = await fetch(jsonurl);
+            Inspirationer = await datajson.json();
+            console.log(inspirationer);
 
 
-		function VisInspirationer() {
-
-			Inspirationer.forEach(Inspiration => {
-				console.log(Inspiration);
-				let str = Inspiration.content.rendered;
-				let rest = str.substr(0, 250)
-				let klon = template.cloneNode(true).content;
-				console.log(klon);
-				klon.querySelector("h2").innerHTML = Inspiration.title.rendered;
-				klon.querySelector("p").innerHTML = rest + " ...";
-				klon.querySelector(".link").innerHTML = '<a href=Inspiration.html?id=' + Inspiration.id + ">Læs Mere</a>";
-
-				display.appendChild(klon);
-
-			});
+            VisInspirationer();
+        }
 
 
-		}
-	</script>
+        function VisInspirationer() {
+
+            Inspirationer.forEach(Inspiration => {
+                console.log(Inspiration);
+                let str = Inspiration.content.rendered;
+                let rest = str.substr(0, 250)
+                let klon = template.cloneNode(true).content;
+                console.log(klon);
+                klon.querySelector("h2").innerHTML = Inspiration.title.rendered;
+                klon.querySelector("p").innerHTML = rest + " ...";
+                klon.querySelector(".link").innerHTML = '<a href=Inspiration.html?id=' + Inspiration.id + ">Læs Mere</a>";
+
+                display.appendChild(klon);
+
+            });
+
+
+        }
+    </script>
 </body>
 
 </html>

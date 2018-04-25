@@ -2,30 +2,30 @@
 <html id="inspiration" lang="da">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Food8 - Din digitale foodcourt</title>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food8 - Din digitale foodcourt</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-	<a href="/inspirationer.html">
-		<div class="backbutton">Tilbage</div>
-	</a>
-	<header>
-		<div class="indexicon"><a href="index.html"><img src="images/logo/logo.png" alt="icon"></a></div>
-	</header>
-	<section id="description">
-		<article>
+    <a href="/inspirationer.html">
+        <div class="backbutton">Tilbage</div>
+    </a>
+    <header>
+        <div class="indexicon"><a href="index.html"><img src="images/logo/logo.png" alt="icon"></a></div>
+    </header>
+    <section id="description">
+        <article>
 
 
 
-			<section>
+            <section>
 
-			</section>
+            </section>
 
 
-			<template>
+            <template>
 		<article class="nyhed">
 			<div class="big_img">
 
@@ -40,60 +40,63 @@
 
 
 
-		</article>
-	</section>
+        </article>
+    </section>
+    <div class="nyhedsbrev">
+        <img src="images/nav_circles/nhs_brev.svg" alt="">
+    </div>
 
-	<footer>
-		<div class="footercontent"> OM <img src="images/logo/logo.png" class="footericon" alt=""></div>
-
-
-		<p>
-			info@food8.dk<br> Food8 ApS — Langelinie 10, 2100 København Ø<br> — CVR nr. 39306999<br></p>
-		<img src="images/logo/stroem_logo.png" alt="stroem" class="stroem">
-		<div class="footercontact">
-			<a href="https://www.facebook.com/food8dk/"><img src="images/icon/facebook.png" alt="facelogo"></a>
-			<a href="https://www.instagram.com/food8dk/"><img src="images/icon/instagram-colourful-icon.png" alt="instalogo"></a></div>
-	</footer>
-	<script>
-		let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/inspiration";
-		let Inspirationer = [];
-		let display = document.querySelector("section");
-		let template = document.querySelector("template");
-
-		document.addEventListener("DOMContentLoaded", hentjson);
-
-		async function hentjson() {
-
-			let datajson = await fetch(jsonurl);
-			Inspirationer = await datajson.json();
-			hvisenkelt();
-
-		}
-
-		function hvisenkelt() {
-
-			let urlParams = new URLSearchParams(window.location.search);
-			let urlid = urlParams.get("id");
-			let klon = template.cloneNode(true).content;
-			console.log(urlid)
+    <footer>
+        <div class="footercontent"> OM <img src="images/logo/logo.png" class="footericon" alt=""></div>
 
 
-			let single = Inspirationer.find(Inspiration => {
-				// hvis my_id = ret.id så hvis indhold i modalvindue
-				if (urlid == Inspiration.id) {
-					klon.querySelector("p").innerHTML = Inspiration.content.rendered;
-					klon.querySelector("h2").innerHTML = Inspiration.title.rendered;
-					klon.querySelector(".big_img").innerHTML = '<img src="' + Inspiration.better_featured_image.source_url + '" />'
-					console.log("jeg virker");
+        <p>
+            info@food8.dk<br> Food8 ApS — Langelinie 10, 2100 København Ø<br> — CVR nr. 39306999<br></p>
+        <img src="images/logo/stroem_logo.png" alt="stroem" class="stroem">
+        <div class="footercontact">
+            <a href="https://www.facebook.com/food8dk/"><img src="images/icon/facebook.png" alt="facelogo"></a>
+            <a href="https://www.instagram.com/food8dk/"><img src="images/icon/instagram-colourful-icon.png" alt="instalogo"></a></div>
+    </footer>
+    <script>
+        let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/inspiration";
+        let Inspirationer = [];
+        let display = document.querySelector("section");
+        let template = document.querySelector("template");
+
+        document.addEventListener("DOMContentLoaded", hentjson);
+
+        async function hentjson() {
+
+            let datajson = await fetch(jsonurl);
+            Inspirationer = await datajson.json();
+            hvisenkelt();
+
+        }
+
+        function hvisenkelt() {
+
+            let urlParams = new URLSearchParams(window.location.search);
+            let urlid = urlParams.get("id");
+            let klon = template.cloneNode(true).content;
+            console.log(urlid)
 
 
-					display.appendChild(klon);
-				}
-			});
+            let single = Inspirationer.find(Inspiration => {
+                // hvis my_id = ret.id så hvis indhold i modalvindue
+                if (urlid == Inspiration.id) {
+                    klon.querySelector("p").innerHTML = Inspiration.content.rendered;
+                    klon.querySelector("h2").innerHTML = Inspiration.title.rendered;
+                    klon.querySelector(".big_img").innerHTML = '<img src="' + Inspiration.better_featured_image.source_url + '" />'
+                    console.log("jeg virker");
 
-		}
-		//console.log(my_id);
-	</script>
+
+                    display.appendChild(klon);
+                }
+            });
+
+        }
+        //console.log(my_id);
+    </script>
 </body>
 
 </html>
