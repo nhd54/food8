@@ -273,23 +273,23 @@ nyhed a {
 
 }
 
-<<<<<<< HEAD
 .alignnone {
     display: flex;
     align-content: center;
-    width: 60vw;
-    height: auto;
+    width: 40vw;
+    height: 50vw;
 
 }
 
 .maps iframe {
     width: 90vw;
     height: 300px;
-=======
+}
+
 .bigcontainer {
-	margin: 10px;
+    margin: 10px;
     background-color: rgba(057, 087, 097, 0.9);
     padding: 5px;
     box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.75);
->>>>>>> origin/master
+
 }
