@@ -54,8 +54,8 @@ header {
 footer {
     height: 100px;
     width: 100%;
-    <<<<<<< HEAD background-color: blue;
-    =======background-color: rgba(177, 199, 211, 0.59);
+    background-color: blue;
+    background-color: rgba(177, 199, 211, 0.59);
 
 }
 
@@ -72,7 +72,7 @@ footer {
 
     height: 30px;
     width: auto;
-    > > > > > > > origin/master
+
 }
 
 /***** index *****/
@@ -93,8 +93,8 @@ footer {
     background-image: url(images/baggrund/baggrund_mobil_index.jpg);
     background-size: cover;
     padding-top: 20px;
-    <<<<<<< HEAD=======text-align: center;
-    > > > > > > > origin/master
+    text-align: center;
+
 }
 
 #navindex {
@@ -106,7 +106,7 @@ footer {
 
 .navbutton {
     margin: 0;
-    <<<<<<< HEAD height: 50px;
+    height: 50px;
     width: 50px;
     background-color: red;
     margin: 20px;
@@ -117,7 +117,7 @@ footer {
 
     margin: 20px;
 
-    > > > > > > > origin/master
+
 }
 
 .navbutton:hover {
@@ -156,10 +156,11 @@ article a:hover {
 
 }
 
-.newscontainerbg {
-    margin: 10px;
-    background-color: darkslategray;
-    padding: 10px;
+#newscontainerbg {
+    margin: 3px;
+    background-color: rgba(177, 199, 211, 0.70);
+    padding: 5px;
+
 }
 
 .big_img img {
@@ -187,6 +188,7 @@ article a:hover {
 .rescontainer {
     margin: 80px;
     padding: 35px;
+    background-repeat: no-repeat;
 
 
 }
