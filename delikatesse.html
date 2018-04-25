@@ -84,11 +84,11 @@
 				// hvis my_id = ret.id så hvis indhold i modalvindue
 				if (urlid == Delikatesse.id) {
 
-					klon.querySelector(".email").textContent = Delikatesse.acf.email;
+					klon.querySelector(".email").innerHTML = "<br> <h3>Kontakt</h3> <br> " + Delikatesse.acf.email;
 					klon.querySelector(".telefon").innerHTML = Delikatesse.acf.telefon;
-					klon.querySelector(".adress").innerHTML = Delikatesse.acf.adresse;
+					klon.querySelector(".adress").innerHTML = "<br> <h3>Kontakt</h3> <br> " + Delikatesse.acf.adresse;
 					klon.querySelector(".report").innerHTML = Delikatesse.acf.kontrolrapport;
-					klon.querySelector(".open").innerHTML = Delikatesse.acf.åbningstider;
+					klon.querySelector(".open").innerHTML = "<h3>Åbningstider</h3> " + Delikatesse.acf.åbningstider;
 					klon.querySelector("p").innerHTML = Delikatesse.content.rendered;
 					klon.querySelector(".maps").innerHTML = Delikatesse.acf.maps;
 					klon.querySelector(".big_img").innerHTML = '<img src="' + Delikatesse.better_featured_image.source_url + ' " />'
