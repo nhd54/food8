@@ -2,24 +2,27 @@
 <html id="delikatesse" lang="da">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Food8 - Din digitale foodcourt</title>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food8 - Din digitale foodcourt</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-	<header>
-		<div class="indexicon"><a href="index.html"><img src="images/logo/logo.png" alt="icon"></a></div>
-	</header>
-	<nav>
-		<div id="button1"></div>
-		<div id="button2"></div>
-		<div id="button3"></div>
-		<div id="button4"></div>
-	</nav>
-	<section>
-		<template>
+    <a href="/delikatesser.html">
+        <div class="backbutton">Tilbage</div>
+    </a>
+    <header>
+        <div class="indexicon"><a href="index.html"><img src="images/logo/logo.png" alt="icon"></a></div>
+    </header>
+    <nav>
+        <div id="button1"></div>
+        <div id="button2"></div>
+        <div id="button3"></div>
+        <div id="button4"></div>
+    </nav>
+    <section>
+        <template>
    <section id="banner">
    	 <div class="big_img"></div>
    </section>
@@ -37,63 +40,59 @@
     	<div class="contactinfo"></div>
     	<div class="report"></div>
     </section>
-    <section id="pictures">
-        <img src=" " alt=" ">
-        <img src=" " alt=" ">
-        <img src=" " alt=" ">
-    </section>
+
 
     </template>
 
-	</section>
+    </section>
 
 
 
-	<footer>
-		<div class="footercontent"> OM <img src="images/logo/logo.png" class="footericon" alt=""></div>
+    <footer>
+        <div class="footercontent"> OM <img src="images/logo/logo.png" class="footericon" alt=""></div>
 
 
-		<p>
-			info@food8.dk<br> Food8 ApS — Langelinie 10, 2100 København Ø<br> — CVR nr. 39306999<br></p>
-		<img src="images/logo/stroem_logo.png" alt="stroem" class="stroem">
-		<div class="footercontact">
-			<a href="https://www.facebook.com/food8dk/"><img src="images/icon/facebook.png" alt="facelogo"></a>
-			<a href="https://www.instagram.com/food8dk/"><img src="images/icon/instagram-colourful-icon.png" alt="instalogo"></a></div>
-	</footer>
-	<script>
-		let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/Delikatesse";
-		let Delikatesser = [];
-		let display = document.querySelector("section");
-		let template = document.querySelector("template");
-		document.addEventListener("DOMContentLoaded", hentjson);
-		async function hentjson() {
-			let datajson = await fetch(jsonurl);
-			Delikatesser = await datajson.json();
-			console.log(Delikatesser);
-			hvisDelikatesse();
-		}
+        <p>
+            info@food8.dk<br> Food8 ApS — Langelinie 10, 2100 København Ø<br> — CVR nr. 39306999<br></p>
+        <img src="images/logo/stroem_logo.png" alt="stroem" class="stroem">
+        <div class="footercontact">
+            <a href="https://www.facebook.com/food8dk/"><img src="images/icon/facebook.png" alt="facelogo"></a>
+            <a href="https://www.instagram.com/food8dk/"><img src="images/icon/instagram-colourful-icon.png" alt="instalogo"></a></div>
+    </footer>
+    <script>
+        let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/Delikatesse";
+        let Delikatesser = [];
+        let display = document.querySelector("section");
+        let template = document.querySelector("template");
+        document.addEventListener("DOMContentLoaded", hentjson);
+        async function hentjson() {
+            let datajson = await fetch(jsonurl);
+            Delikatesser = await datajson.json();
+            console.log(Delikatesser);
+            hvisDelikatesse();
+        }
 
-		function hvisDelikatesse() {
-			let urlParams = new URLSearchParams(window.location.search);
-			let urlid = urlParams.get("id");
-			let klon = template.cloneNode(true).content;
-			console.log(urlid)
-			let single = Delikatesser.find(Delikatesse => {
-				// hvis my_id = ret.id så hvis indhold i modalvindue
-				if (urlid == Delikatesse.id) {
+        function hvisDelikatesse() {
+            let urlParams = new URLSearchParams(window.location.search);
+            let urlid = urlParams.get("id");
+            let klon = template.cloneNode(true).content;
+            console.log(urlid)
+            let single = Delikatesser.find(Delikatesse => {
+                // hvis my_id = ret.id så hvis indhold i modalvindue
+                if (urlid == Delikatesse.id) {
 
-					klon.querySelector(".contactinfo").innerHTML = Delikatesse.acf.email;
-					klon.querySelector(".contactinfo").innerHTML = Delikatesse.acf.telefon;
-					klon.querySelector(".adress").innerHTML = Delikatesse.acf.adresse;
-					klon.querySelector(".report").innerHTML = Delikatesse.acf.kontrolreport;
-					klon.querySelector("p").innerHTML = Delikatesse.content.rendered;
-					klon.querySelector(".big_img").innerHTML = '<img src="' + Delikatesse.better_featured_image.source_url + ' " />'
-					console.log("jeg virker");
-					display.appendChild(klon);
-				}
-			});
-		}
-	</script>
+                    klon.querySelector(".contactinfo").innerHTML = Delikatesse.acf.email;
+                    klon.querySelector(".contactinfo").innerHTML = Delikatesse.acf.telefon;
+                    klon.querySelector(".adress").innerHTML = Delikatesse.acf.adresse;
+                    klon.querySelector(".report").innerHTML = Delikatesse.acf.kontrolreport;
+                    klon.querySelector("p").innerHTML = Delikatesse.content.rendered;
+                    klon.querySelector(".big_img").innerHTML = '<img src="' + Delikatesse.better_featured_image.source_url + ' " />'
+                    console.log("jeg virker");
+                    display.appendChild(klon);
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
