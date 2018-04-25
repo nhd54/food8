@@ -243,8 +243,7 @@ nyhed a {
     padding: 30px;
     height: 200px;
     background-repeat: no-repeat;
-    background-color: rgb(98, 127, 140);
-    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.20);
+
 
 }
 
@@ -274,6 +273,7 @@ nyhed a {
 
 }
 
+<<<<<<< HEAD
 .alignnone {
     display: flex;
     align-content: center;
@@ -285,4 +285,11 @@ nyhed a {
 .maps iframe {
     width: 90vw;
     height: 300px;
+=======
+.bigcontainer {
+	margin: 10px;
+    background-color: rgba(057, 087, 097, 0.9);
+    padding: 5px;
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.75);
+>>>>>>> origin/master
 }
