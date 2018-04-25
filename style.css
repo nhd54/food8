@@ -218,10 +218,12 @@ nyhed a {
     position: absolute;
     top: 35vw;
     left: 2vw;
-    background-color: #25c8b8;
+    background-image: url(images/nav_circles/back_button.png);
+    background-size: contain;
     height: 50px;
     width: 50px;
     border-radius: 50px;
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.20);
 }
 
 
