@@ -29,7 +29,7 @@
 	<section id="rescontainerbg">
 
 		<template>
-
+ 		<a data-single href="">
          <div class="rescontainer">
 		<article class="ressarticle">
 
@@ -38,6 +38,8 @@
 
 		</article>
                </div>
+     	</a>
+
 	</template>
 
 
@@ -72,6 +74,7 @@
 				console.log(klon);
 
 				klon.querySelector(".rescontainer").style.backgroundImage = "url(" + restaurant.better_featured_image.media_details.sizes.medium_large.source_url + ")"
+				klon.querySelector("[data-single]").href = "restaurant.html?id=" + restaurant.id;
 				display.appendChild(klon);
 
 			});
