@@ -8,7 +8,8 @@
 body {
     background-image: url(images/baggrund/baggrund_mobil_side.jpg);
     background-size: cover;
-    font-family: 'HKGrotesk';
+    <<<<<<< HEAD=======font-family: 'HKGrotesk';
+    > > > > > > > origin/master
 }
 
 h2 {
@@ -29,13 +30,18 @@ p {
 }
 
 header {
-
-    margin-top: 5vw;
+    <<<<<<< HEAD <<<<<<< HEAD margin-top: 5vw;
+    height: 150px;
+    width: 100%;
+    =======height: 150px;
+    width: 100%;
+    > > > > > > > origin/master=======margin-top: 5vw;
     height: 150px;
     width: 100%;
     height: 150px;
     width: 100%;
 
+    > > > > > > > origin/master
 }
 
 .icon {
@@ -48,6 +54,7 @@ header {
 footer {
     height: 100px;
     width: 100%;
+    background-color: blue;
     background-color: rgba(177, 199, 211, 0.59);
 
 }
@@ -99,11 +106,16 @@ footer {
 
 .navbutton {
     margin: 0;
-    height: auto;
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    margin: 20px;
+
+    border-radius: 50%;
+    =======height: auto;
     width: 130px;
 
     margin: 20px;
-
 
 
 }
@@ -144,10 +156,11 @@ article a:hover {
 
 }
 
-.newscontainerbg {
-    margin: 10px;
-    background-color: darkslategray;
-    padding: 10px;
+#newscontainerbg {
+    margin: 3px;
+    background-color: rgba(177, 199, 211, 0.70);
+    padding: 5px;
+
 }
 
 .big_img img {
@@ -161,4 +174,21 @@ article a:hover {
 
 .newsarticle {
     background-color: aliceblue;
+
+}
+
+
+/*restauranter*/
+
+.rescontainerbg {
+    margin: 10px;
+    padding: 10px;
+}
+
+.rescontainer {
+    margin: 80px;
+    padding: 35px;
+    background-repeat: no-repeat;
+
+
 }
