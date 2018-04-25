@@ -43,16 +43,17 @@ header {
 
 
 footer {
-    height: 100px;
+    height: 164px;
     width: 100%;
     background-color: blue;
     background-color: rgba(177, 199, 211, 0.59);
     color: #475665;
+    text-align: center;
 
 }
 
 footer p {
-    text-align: center;
+
     font-size: 0.5em;
 }
 
@@ -71,6 +72,19 @@ footer p {
     height: 30px;
     width: auto;
 
+}
+
+.stroem {
+    height: 30px;
+}
+
+.footercontact {
+    display: flex;
+    justify-content: flex-end
+}
+
+.footercontact img {
+    height: 40px;
 }
 
 /***** index *****/
