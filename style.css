@@ -221,7 +221,10 @@ nyhed a {
 .rescontainer {
     margin: 25px;
     background-position: center;
-    padding: 20px;
+    padding: 30px;
     height: 200px;
     background-repeat: no-repeat;
+    background-color: rgb(98, 127, 140);
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.20);
+
 }
