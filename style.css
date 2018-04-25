@@ -146,6 +146,7 @@ footer p {
     margin: 20px;
     background-color: rgb(98, 127, 140);
     padding: 30px;
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.20);
 }
 
 article {
@@ -197,14 +198,30 @@ nyhed a {
     margin: 10px;
     background-color: rgba(176, 203, 209, 0.9);
     padding: 5px;
-    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.20);
     color: #475665;
+    background-color: aliceblue
+}
 
+.newscontainerbg h2 {
+    text-align: left;
+    margin-top: 2vw;
 }
 
 .newsarticle {
     background-color: aliceblue;
 
+
+}
+
+.backbutton {
+    position: absolute;
+    top: 35vw;
+    left: 2vw;
+    background-color: #25c8b8;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
 }
 
 
@@ -212,6 +229,8 @@ nyhed a {
 
 #rescontainerbg {
     margin: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
     background-color: rgba(057, 087, 097, 0.9);
     padding: 5px;
     box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.75);
@@ -225,6 +244,31 @@ nyhed a {
     height: 200px;
     background-repeat: no-repeat;
     background-color: rgb(98, 127, 140);
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.20);
+
+}
+
+/****enkelt restaurant****/
+
+#menu {
+    text-align: center;
+    margin: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: rgba(176, 203, 209, 0.59);
+    padding: 5px;
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.75);
+    color: #475665;
+}
+
+#menu img {
+    height: 50px;
+}
+
+#contact {
+    margin: 10px;
+    padding: 2vw;
+    background-color: #EDE5DF;
     box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.20);
 
 }

@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <a href="/restauranter.html">
+        <div class="backbutton">Tilbage</div>
+    </a>
     <header>
         <div class="indexicon"><a href="index.html"><img src="images/logo/logo.png" alt="icon"></a></div>
     </header>
@@ -31,10 +34,11 @@
         </article>
 
     </section>
-    <section id="menu"><img src=" " alt="menu">
+    <section id="menu"><img src="images/nav_circles/menu_icon.svg" alt="menu">
 
         <details>
-
+ <summary> </summary>
+        <p class="menudetails"></p>
          </details>
     </section>
     <section id="contact">
@@ -42,11 +46,6 @@
     	<div class="adress"></div>
     	<div class="contactinfo"></div>
     	<div class="report"></div>
-    </section>
-    <section id="pictures">
-        <img src=" " alt=" ">
-        <img src=" " alt=" ">
-        <img src=" " alt=" ">
     </section>
 
     </template>
@@ -88,7 +87,7 @@
             let single = Restauranter.find(Restaurant => {
                 // hvis my_id = ret.id så hvis indhold i modalvindue
                 if (urlid == Restaurant.id) {
-                    klon.querySelector("details").innerHTML = Restaurant.acf.Menukort;
+                    klon.querySelector(".menudetails").innerHTML = Restaurant.acf.Menukort;
                     klon.querySelector(".contactinfo").innerHTML = Restaurant.acf.email;
                     klon.querySelector(".contactinfo").innerHTML = Restaurant.acf.telefon;
                     klon.querySelector(".adress").innerHTML = Restaurant.acf.adresse;
