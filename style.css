@@ -323,13 +323,106 @@ nyhed a {
 
 
 .nyhedsbrev {
-    top: 120vw;
-    left: 85vw;
+    top: 80vh;
+    left: 75vw;
     position: fixed;
     z-index: 10;
-    width: 10vw;
+    width: 20vw;
 }
 
 h1 {
-	text-align: center;
+    text-align: center;
+}
+
+
+/**** burgermenu ***/
+
+/*******tribar menu****/
+
+/*design*/
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 30px;
+    height: 3px;
+    background-color: #EDE5DF;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.accordion {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    color: #444;
+    cursor: pointer;
+    margin: 2vw;
+    padding: 2vw;
+    background-color: #3d5566;
+    height: 30px;
+    width: 30px;
+    text-align: left;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.4s;
+    z-index: 10;
+
+}
+
+.accordion:hover {
+    transform: scale(1.1, 1.1);
+}
+
+main {
+    position: relative;
+    z-index: 0;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+
+#normalMenu {
+    position: fixed;
+    z-index: 7;
+    top: 0;
+    padding: 0;
+    background-color: #475665;
+    display: none;
+    overflow: hidden;
+    transition: 0.4s;
+    width: 100%;
+    border-top: 80px solid #2b3940;
+    box-shadow: 0 5px 20px black;
+
+
+}
+
+#normalMenu button {
+    text-decoration: none;
+    border: none;
+    z-index: 7;
+    border-bottom: 1px solid #2b3940;
+    display: block;
+    background-color: transparent;
+    padding: 4px;
+    width: 100%;
+    color: #EDE5DF;
+    font-family: 'HKGrotesk';
+    font-size: 2em;
+    cursor: pointer;
+}
+
+#normalMenu a {
+    text-decoration: none;
+}
+
+.MenuBackdrop {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+
 }

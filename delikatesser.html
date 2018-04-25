@@ -10,6 +10,24 @@
 
 <body>
 
+    <div class="accordion">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+
+
+    <nav id="normalMenu">
+        <div class="MenuBackdrop"> </div>
+        <div class="buttons">
+            <a href="nyheder.html"><button class="buttonnews">Nyheder</button></a>
+            <a href="restauranter.html"><button class="buttonres">Restauranter</button></a>
+            <a href="delikatesser.html"><button class="buttondeli">Delikatesser</button></a>
+            <a href="inspirationer.html"><button class="buttoninsp">Inspiration</button></a>
+
+        </div>
+    </nav>
+
     <header>
         <div class="indexicon"><a href="index.html"><img src="images/logo/logo.png" alt="icon"></a></div>
 
@@ -84,6 +102,19 @@
             });
 
 
+        }
+        let acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                let panel = this.nextElementSibling;
+                if (panel.style.display === "inline-block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "inline-block";
+                }
+            });
         }
     </script>
 
