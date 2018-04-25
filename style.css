@@ -263,6 +263,7 @@ nyhed a {
 
 #menu img {
     height: 50px;
+    text-align: center;
 }
 
 #contact {
@@ -271,4 +272,17 @@ nyhed a {
     background-color: #EDE5DF;
     box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.20);
 
+}
+
+.alignnone {
+    display: flex;
+    align-content: center;
+    width: 60vw;
+    height: auto;
+
+}
+
+.maps iframe {
+    width: 90vw;
+    height: 300px;
 }
