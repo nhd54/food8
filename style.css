@@ -175,12 +175,30 @@ article a:hover {
     box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.75);
 }
 
+
 .big_img img {
     width: 100%;
 }
 
-.nyhed {
-    padding: 0px;
+.nyhed p {
+    margin: 10px;
+    margin-left: 5px;
+
+}
+
+nyhed a {
+    color: #475665;
+}
+
+.newscontainerbg
+/** enkelt nyhed **/
+
+    {
+    margin: 10px;
+    background-color: rgba(176, 203, 209, 0.9);
+    padding: 5px;
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.75);
+    color: #475665;
 
 }
 
