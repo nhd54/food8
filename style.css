@@ -172,7 +172,7 @@ article a:hover {
     margin: 10px;
     background-color: rgba(057, 087, 097, 0.9);
     padding: 5px;
-    box-shadow:
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.75);
 }
 
 .big_img img {
@@ -196,7 +196,7 @@ article a:hover {
     margin: 10px;
     background-color: rgba(057, 087, 097, 0.9);
     padding: 5px;
-    box-shadow:
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.75);
 }
 
 
