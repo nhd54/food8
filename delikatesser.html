@@ -2,96 +2,88 @@
 <html id="delikatesser" lang="">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <div class="indexicon"><a href="index.html"><img src="images/logo/logo.png" alt="icon"></a></div>
+	<header>
+		<div class="indexicon"><a href="index.html"><img src="images/logo/logo.png" alt="icon"></a></div>
 
-        <!--<nav>
-			<a href="nyheder.html">
-            <img class="icon" src="images/icon/icon_menu_nyheder.svg" alt="">
-        </a>
-			<a href="restauranter.html">
-            <img class="icon" src="images/icon/icon_menu_restauranter.svg" alt="">
-        </a>
-			<a href="delikatesser.html">
-            <img class="icon" src="images/icon/icon_menu_delikatesse.svg" alt="">
-        </a>
-			<a href="inspirationer.html">
-    <img class="icon" src="images/icon/icon_menu_inspiration.svg" alt="">
-</a>
-		</nav> -->
-    </header>
-    <section>
+
+	</header>
+	<section>
 
 
 
-        <template>
+		<template>
+
+        <a data-single href="">
+
          <div class="rescontainer">
 		<article class="ressarticle">
 
 
 		</article>
                </div>
+
+               </a>
 	</template>
 
 
-    </section>
+	</section>
 
 
-    <footer>
-        <div class="footercontent"> OM <img src="images/logo/logo.png" class="footericon" alt=""></div>
+	<footer>
+		<div class="footercontent"> OM <img src="images/logo/logo.png" class="footericon" alt=""></div>
 
 
-        <p>
-            info@food8.dk<br> Food8 ApS — Langelinie 10, 2100 København Ø<br> — CVR nr. 39306999<br></p>
-        <img src="images/logo/stroem_logo.png" alt="stroem" class="stroem">
-        <div class="footercontact">
-            <a href="https://www.facebook.com/food8dk/"><img src="images/icon/facebook.png" alt="facelogo"></a>
-            <a href="https://www.instagram.com/food8dk/"><img src="images/icon/instagram-colourful-icon.png" alt="instalogo"></a></div>
-    </footer>
+		<p>
+			info@food8.dk<br> Food8 ApS — Langelinie 10, 2100 København Ø<br> — CVR nr. 39306999<br></p>
+		<img src="images/logo/stroem_logo.png" alt="stroem" class="stroem">
+		<div class="footercontact">
+			<a href="https://www.facebook.com/food8dk/"><img src="images/icon/facebook.png" alt="facelogo"></a>
+			<a href="https://www.instagram.com/food8dk/"><img src="images/icon/instagram-colourful-icon.png" alt="instalogo"></a></div>
+	</footer>
 
 
 
-    <script>
-        let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/delikatesse";
-        let Delikatesser = [];
-        let display = document.querySelector("section");
-        let template = document.querySelector("template");
-        document.addEventListener("DOMContentLoaded", hentjson);
-        async function hentjson() {
-            let datajson = await fetch(jsonurl);
-            Delikatesser = await datajson.json();
-            console.log(Delikatesser);
+	<script>
+		let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/delikatesse";
+		let Delikatesser = [];
+		let display = document.querySelector("section");
+		let template = document.querySelector("template");
+		document.addEventListener("DOMContentLoaded", hentjson);
+		async function hentjson() {
+			let datajson = await fetch(jsonurl);
+			Delikatesser = await datajson.json();
+			console.log(Delikatesser);
 
 
-            VisDelikatesser();
-        }
+			VisDelikatesser();
+		}
 
 
-        function VisDelikatesser() {
+		function VisDelikatesser() {
 
-            Delikatesser.forEach(Delikatesse => {
-                console.log(Delikatesse);
-                let str = Delikatesse.content.rendered;
-                let rest = str.substr(0, 250)
-                let klon = template.cloneNode(true).content;
-                console.log(klon);
-                klon.querySelector(".rescontainer").style.backgroundImage = "url(" + Delikatesse.better_featured_image.media_details.sizes.medium_large.source_url + ")"
+			Delikatesser.forEach(Delikatesse => {
+				console.log(Delikatesse);
+				let str = Delikatesse.content.rendered;
+				let rest = str.substr(0, 250)
+				let klon = template.cloneNode(true).content;
+				console.log(klon);
+				klon.querySelector(".rescontainer").style.backgroundImage = "url(" + Delikatesse.better_featured_image.media_details.sizes.medium_large.source_url + ")"
+				klon.querySelector("[data-single]").href = "Delikatesse.html?id=" + Delikatesse.id;
+				display.appendChild(klon);
 
-                display.appendChild(klon);
-
-            });
+			});
 
 
-        }
-    </script>
+		}
+	</script>
 
 
 </body>
