@@ -79,6 +79,7 @@
 				// hvis my_id = ret.id så hvis indhold i modalvindue
 				if (urlid == Inspiration.id) {
 					klon.querySelector("p").innerHTML = Inspiration.content.rendered;
+					klon.querySelector("h2").innerHTML = Inspiration.title.rendered;
 					klon.querySelector(".big_img").innerHTML = '<img src="' + Inspiration.better_featured_image.source_url + '" />'
 					console.log("jeg virker");
 
