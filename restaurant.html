@@ -104,8 +104,8 @@
 					klon.querySelector(".email").innerHTML = "<br> <h3>Kontakt</h3> <br> " + Restaurant.acf.email;
 					klon.querySelector(".telefon").innerHTML = Restaurant.acf.telefon;
 					klon.querySelector("h1").innerHTML = Restaurant.title.rendered;
-					klon.querySelector(".adress").innerHTML = "<br> <h3>Kontakt</h3> <br> " + Restaurant.acf.adresse;
-					klon.querySelector(".report").innerHTML = Restaurant.acf.kontrolreport;
+					klon.querySelector(".adress").innerHTML = "<br> <h3>Adresse</h3> <br> " + Restaurant.acf.adresse;
+					klon.querySelector(".report").innerHTML = "<h3>Kontrolreport</h3> " + '<a href=' + Restaurant.acf.kontrolreport + ">Report<a/>";
 					klon.querySelector(".open").innerHTML = "<h3>Åbningstider</h3> " + Restaurant.acf.åbninstider;
 					klon.querySelector("p").innerHTML = Restaurant.content.rendered;
 					klon.querySelector(".maps").innerHTML = Restaurant.acf.maps_test;
@@ -115,7 +115,6 @@
 				}
 			});
 		}
-
 	</script>
 </body>
 
