@@ -431,3 +431,21 @@ main {
     z-index: -1;
 
 }
+
+
+/*** book bord ***/
+
+#bord {
+    background-color: #475665;
+    width: 20vw;
+}
+
+input {
+    margin-left: 2vw;
+    margin-top: 1vw;
+}
+
+.bord {
+    margin: 2vw;
+    color: #ffffff;
+}
