@@ -16,3 +16,8 @@ h3 {
 p {
     margin: 2vw;
 }
+
+#newsletter {
+    background-color: aquamarine;
+    width: 20vw;
+}
