@@ -11,18 +11,20 @@ input {
 
 h3 {
     margin: 2vw;
+    color: #ffffff;
 }
 
 p {
     margin: 2vw;
+    color: #ffffff;
 }
 
 #newsletter {
-    background-color: aquamarine;
+    background-color: #475665;
     width: 20vw;
 }
 
 #bord {
-    background-color: indigo;
+    background-color: #475665;
     width: 20vw;
 }
