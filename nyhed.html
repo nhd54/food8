@@ -74,7 +74,7 @@
 		<img src="images/logo/stroem_logo.png" alt="stroem" class="stroem">
 		<div class="footercontact">
 			<a href="https://www.facebook.com/food8dk/"><img src="images/icon/facebook.png" alt="facelogo"></a>
-			<a href="https://www.instagram.com/food8dk/"><img src="images/icon/instagram-colourful-icon.png" alt="instalogo"></a></div>
+			<a href="https://www.instagram.com/food8dk/"><img alt="instalogo" src="images/icon/instagram-colourful-icon.png" ></a></div>
 	</footer>
 
 	<script>
@@ -105,7 +105,7 @@
 				if (urlid == Nyhed.acf.sogeord) {
 					klon.querySelector("p").innerHTML = Nyhed.content.rendered;
 					klon.querySelector("h2").innerHTML = Nyhed.title.rendered;
-					klon.querySelector(".big_img").innerHTML = '<img src="' + Nyhed.better_featured_image.source_url + ' " />'
+					klon.querySelector(".big_img").innerHTML = '<img alt="' + Nyhed.better_featured_image.alt_text + '"  src="' + Nyhed.better_featured_image.source_url + ' " />'
 
 					console.log("jeg virker");
 
