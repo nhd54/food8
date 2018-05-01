@@ -6,10 +6,13 @@
 /******* general******/
 
 body {
-    background-image: url(images/baggrund/baggrund_mobil_side.jpg);
+    background-image: url(images/baggrund/baggrund_mobil_index.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     font-family: 'HKGrotesk';
 }
+
 
 h2 {
     font-size: 1.2em;
@@ -114,13 +117,8 @@ footer p {
 }
 
 #splash {
-    width: 100%;
-    height: 100%;
-    background-image:;
-    background-size: cover;
     padding-top: 20px;
     text-align: center;
-
 }
 
 #navindex {
