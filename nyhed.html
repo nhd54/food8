@@ -102,7 +102,7 @@
 
 			let single = Nyheder.find(Nyhed => {
 				// hvis my_id = ret.id så hvis indhold i modalvindue
-				if (urlid == Nyhed.id) {
+				if (urlid == Nyhed.acf.sogeord) {
 					klon.querySelector("p").innerHTML = Nyhed.content.rendered;
 					klon.querySelector("h2").innerHTML = Nyhed.title.rendered;
 					klon.querySelector(".big_img").innerHTML = '<img src="' + Nyhed.better_featured_image.source_url + ' " />'
@@ -128,7 +128,6 @@
 				}
 			});
 		}
-
 	</script>
 </body>
 

@@ -96,7 +96,7 @@
 				let klon = template.cloneNode(true).content;
 				console.log(klon);
 				klon.querySelector(".rescontainer").style.backgroundImage = "url(" + Delikatesse.better_featured_image.media_details.sizes.medium_large.source_url + ")"
-				klon.querySelector("[data-single]").href = "Delikatesse.html?id=" + Delikatesse.id;
+				klon.querySelector("[data-single]").href = "Delikatesse.html?id=" + Delikatesse.title.rendered;
 				display.appendChild(klon);
 
 			});

@@ -117,7 +117,7 @@
 				//	klon.querySelector(".newsarticle").style.backgroundImage = url(Nyhed.better_featured_image.source_url);
 				klon.querySelector("h2").innerHTML = Nyhed.title.rendered;
 				klon.querySelector("p").innerHTML = rest + " ...";
-				klon.querySelector(".link").innerHTML = '<a href=nyhed.html?id=' + Nyhed.id + ">Læs Mere</a>";
+				klon.querySelector(".link").innerHTML = '<a href=nyhed.html?id=' + Nyhed.acf.sogeord + ">Læs Mere</a>";
 
 				display.appendChild(klon);
 
@@ -138,7 +138,6 @@
 				}
 			});
 		}
-
 	</script>
 
 </body>
