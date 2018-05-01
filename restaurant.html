@@ -101,7 +101,21 @@
 	<div class="nyhedsbrev">
 		<img src="images/nav_circles/nhs_brev.svg" alt="">
 	</div>
-
+	<section id="newsletter" style="display: none">
+		<div class="news_info">
+			<h3>
+				Tilmed dig vores nyhedsbrev
+			</h3>
+			<p>
+				Skrev dig op til vores nyhedsbrev, det bliver sendt hver onsdag
+			</p>
+			<input name="fristname" placeholder="dit navn" type="text">
+			<br>
+			<input name="email" placeholder="din email" type="text">
+			<br>
+			<input type="submit" value="Submit">
+		</div>
+	</section>
 	<footer>
 		<div class="footercontent"> <a href="om.html"> OM <img src="images/logo/logo.png" class="footericon" alt="">  </a></div>
 
@@ -163,6 +177,19 @@
 				} else {
 					panel.style.display = "inline-block";
 				}
+			});
+		}
+
+		let news = document.getElementsByClassName("nyhedsbrev");
+		var i;
+		for (i = 0; i < news.length; i++) {
+			news[i].addEventListener("click", function() {
+				console.log("jeg virker");
+
+				//let panel = this.nextElementSibling;
+				document.getElementById("newsletter").style.display = "block";
+
+
 			});
 		}
 	</script>
