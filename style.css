@@ -117,13 +117,6 @@ footer p {
 }
 
 #splash {
-<<<<<<< HEAD
-=======
-    width: 100%;
-    height: 100%;
-    background-image: ;
-    background-size: cover;
->>>>>>> origin/master
     padding-top: 20px;
     text-align: center;
 }
@@ -139,16 +132,11 @@ footer p {
     margin: 0;
     height: 50px;
     width: 50px;
-
     margin: 20px;
-
     border-radius: 50%;
     height: auto;
     width: 130px;
-
     margin: 20px;
-
-
 }
 
 .navbutton:hover {
@@ -330,7 +318,7 @@ nyhed a {
 
 .nyhedsbrev {
     top: 80vh;
-    left: 72vw;
+    left: 74vw;
     position: fixed;
     z-index: 10;
     width: 20vw;
