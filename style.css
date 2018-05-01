@@ -157,10 +157,9 @@ footer p {
 /****nyheder******/
 
 .newscontainer {
-    margin: 20px;
     background-color: rgb(98, 127, 140);
     padding: 30px;
-    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.20);
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.40);
 }
 
 article {
@@ -184,10 +183,7 @@ article a:hover {
 }
 
 #newscontainerbg {
-    margin: 10px;
-    background-color: rgba(057, 087, 097, 0.9);
-    padding: 5px;
-    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.20);
+    margin: 10px 10px 40px 10px;
 }
 
 
@@ -211,8 +207,7 @@ nyhed a {
     {
     margin: 10px;
     background-color: rgba(176, 203, 209, 0.9);
-    padding: 5px;
-    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.20);
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.40);
     color: #475665;
     background-color: aliceblue
 }
@@ -237,7 +232,7 @@ nyhed a {
     height: 50px;
     width: 50px;
     border-radius: 50px;
-    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.20);
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.40);
 }
 
 
@@ -247,16 +242,12 @@ nyhed a {
     margin: 10px;
     margin-top: 0;
     margin-bottom: 0;
-    background-color: rgba(057, 087, 097, 0.9);
     padding: 5px;
-    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.20);
 }
 
 
 .rescontainer {
-    margin: 25px;
     background-position: center;
-    padding: 30px;
     height: 200px;
     background-repeat: no-repeat;
 
@@ -272,7 +263,7 @@ nyhed a {
     margin-bottom: 0;
     background-color: rgba(176, 203, 209, 0.59);
     padding: 5px;
-    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.20);
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.40);
     color: #475665;
 }
 
@@ -285,14 +276,14 @@ nyhed a {
     margin: 10px;
     padding: 2vw;
     background-color: #EDE5DF;
-    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.20);
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.40);
 
 }
 
 #description {
 
-    background-color: #EDE5DF;
-    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.20);
+    background-color: #fbfbfb66;
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.40);
     margin: 10px;
     padding: 2vw;
 
@@ -316,7 +307,7 @@ nyhed a {
     align-items: center;
     justify-content: center;
     margin: 10px;
-    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.20);
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.40);
 }
 
 .maps iframe {
@@ -328,10 +319,8 @@ nyhed a {
 }
 
 .bigcontainer {
-    margin: 10px;
-    background-color: rgba(057, 087, 097, 0.9);
-    padding: 5px;
-    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.20);
+    margin: 10px 10px 40px 10px;
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.40);
 
 }
 
@@ -424,10 +413,13 @@ main {
     width: 100%;
     color: #EDE5DF;
     font-family: 'HKGrotesk';
-    font-size: 2em;
+    font-size: 1.5em;
     cursor: pointer;
 }
 
+#normalMenu button:hover {
+    font-size: 2em;
+}
 #normalMenu a {
     text-decoration: none;
 }
