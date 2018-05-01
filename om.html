@@ -2,74 +2,73 @@
 <html id="om" lang="da">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Food8 - Din digitale foodcourt</title>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food8 - Din digitale foodcourt</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-	<div class="accordion">
-		<div class="bar1"></div>
-		<div class="bar2"></div>
-		<div class="bar3"></div>
-	</div>
+    <div class="accordion">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
 
 
-	<nav id="normalMenu">
-		<div class="MenuBackdrop"> </div>
-		<div class="buttons">
-			<a href="nyheder.html"><button class="buttonnews">Nyheder</button></a>
-			<a href="restauranter.html"><button class="buttonres">Restauranter</button></a>
-			<a href="delikatesser.html"><button class="buttondeli">Delikatesser</button></a>
-			<a href="inspirationer.html"><button class="buttoninsp">Inspiration</button></a>
+    <nav id="normalMenu">
+        <div class="MenuBackdrop"> </div>
+        <div class="buttons">
+            <a href="nyheder.html"><button class="buttonnews">Nyheder</button></a>
+            <a href="restauranter.html"><button class="buttonres">Restauranter</button></a>
+            <a href="delikatesser.html"><button class="buttondeli">Delikatesser</button></a>
+            <a href="inspirationer.html"><button class="buttoninsp">Inspiration</button></a>
 
-		</div>
-	</nav>
+        </div>
+    </nav>
 
-	<header>
-		<div class="indexicon"><a href="index.html"><img src="images/logo/logo.png" alt="icon"></a></div>
-	</header>
-	<article class="nyhed">
-
-
-		<div class="newscontainerbg">
-			<h2>Om Food8</h2>
-
-			<p><strong>Food8 er en restaurationsgruppe af individuelle restauratører der har slået sig sammen. Her kan man gå på opdagelse blandt kendte og ukendte restauranter, madbutikker og barer – eller det, som vi ganske enkelt kalder steder.</strong> <br> <br> Der vil altid være nye oplevelser og inspiration at hente på food8.dk. Vi samler nyheder, guides og bordbooking samme sted. Så har du allerede oplevet en af restauranter på food8, eller er der fuldt booket, så inspirerer vi dig til en anden god oplevelse. I det ugentlige nyhedsbrev kan du få historier, guides og nyheder om food8s steder. Fælles for alle de steder, du finder på food8.dk er, at de er drevet af forskellige restauratører, som er gået sammen i en restaurationsgruppe for samlet at kunne tilbyde flere oplevelser. Vil du i kontakt med os, så sig hej på info@food8.dk.</p>
-		</div>
-	</article>
-
-	<footer>
-		<div class="footercontent"> <a href="om.html"> OM <img src="images/logo/logo.png" class="footericon" alt="">  </a>
-		</div>
+    <header>
+        <div class="indexicon"><a href="index.html"><img src="images/logo/logo.png" alt="icon"></a></div>
+    </header>
+    <article class="nyhed">
 
 
-		<p>
-			info@food8.dk<br> Food8 ApS — Langelinie 10, 2100 København Ø<br> — CVR nr. 39306999<br></p>
-		<img src="images/logo/stroem_logo.png" alt="stroem" class="stroem">
-		<div class="footercontact">
-			<a href="https://www.facebook.com/food8dk/"><img src="images/icon/facebook.png" alt="facelogo"></a>
-			<a href="https://www.instagram.com/food8dk/"><img src="images/icon/instagram-colourful-icon.png" alt="instalogo"></a></div>
+        <div class="newscontainerbg">
+            <h2>Om Food8</h2>
 
-		<script>
-			let acc = document.getElementsByClassName("accordion");
-			var i;
-			for (i = 0; i < acc.length; i++) {
-				acc[i].addEventListener("click", function() {
-					this.classList.toggle("active");
-					let panel = t his.nextElementSibling;
-					if (panel.style.display === "inline-block") {
-						panel.style.display = "none";
-					} else {
-						panel.style.display = "inline-block";
-					}
-				});
-			}
+            <p><strong>Food8 er en restaurationsgruppe af individuelle restauratører der har slået sig sammen. Her kan man gå på opdagelse blandt kendte og ukendte restauranter, madbutikker og barer – eller det, som vi ganske enkelt kalder steder.</strong> <br> <br> Der vil altid være nye oplevelser og inspiration at hente på food8.dk. Vi samler nyheder, guides og bordbooking samme sted. Så har du allerede oplevet en af restauranter på food8, eller er der fuldt booket, så inspirerer vi dig til en anden god oplevelse. I det ugentlige nyhedsbrev kan du få historier, guides og nyheder om food8s steder. Fælles for alle de steder, du finder på food8.dk er, at de er drevet af forskellige restauratører, som er gået sammen i en restaurationsgruppe for samlet at kunne tilbyde flere oplevelser. Vil du i kontakt med os, så sig hej på info@food8.dk.</p>
+        </div>
+    </article>
 
-		</script>
-	</footer>
+    <footer>
+        <div class="footercontent"> <a href="om.html"> OM <img src="images/logo/logo.png" class="footericon" alt="">  </a>
+        </div>
+
+
+        <p>
+            info@food8.dk<br> Food8 ApS — Langelinie 10, 2100 København Ø<br> — CVR nr. 39306999<br></p>
+        <img src="images/logo/stroem_logo.png" alt="stroem" class="stroem">
+        <div class="footercontact">
+            <a href="https://www.facebook.com/food8dk/"><img src="images/icon/facebook.png" alt="facelogo"></a>
+            <a href="https://www.instagram.com/food8dk/"><img src="images/icon/instagram-colourful-icon.png" alt="instalogo"></a></div>
+
+        <script>
+            let acc = document.getElementsByClassName("accordion");
+            var i;
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    let panel = this.nextElementSibling;
+                    if (panel.style.display === "inline-block") {
+                        panel.style.display = "none";
+                    } else {
+                        panel.style.display = "inline-block";
+                    }
+                });
+            }
+        </script>
+    </footer>
 </body>
 
 </html>
