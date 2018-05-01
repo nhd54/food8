@@ -98,7 +98,7 @@
 				console.log(klon);
 				klon.querySelector("h2").innerHTML = Inspiration.title.rendered;
 				klon.querySelector("p").innerHTML = rest + " ...";
-				klon.querySelector(".link").innerHTML = '<a href=Inspiration.html?id=' + Inspiration.id + ">Læs Mere</a>";
+				klon.querySelector(".link").innerHTML = '<a href=Inspiration.html?id=' + Inspiration.acf.sogeord + ">Læs Mere</a>";
 
 				display.appendChild(klon);
 
@@ -119,7 +119,6 @@
 				}
 			});
 		}
-
 	</script>
 </body>
 

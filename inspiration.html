@@ -44,11 +44,12 @@
 
 			<template>
 		<article class="nyhed">
+		 <h1></h1>
 			<div class="big_img">
 
 			</div>
 			 <div class="newscontainerbg">
-            <h2></h2>
+
             <p></p></div>
 		</article>
 	</template>
@@ -100,9 +101,9 @@
 
 			let single = Inspirationer.find(Inspiration => {
 				// hvis my_id = ret.id så hvis indhold i modalvindue
-				if (urlid == Inspiration.id) {
+				if (urlid == Inspiration.acf.sogeord) {
 					klon.querySelector("p").innerHTML = Inspiration.content.rendered;
-					klon.querySelector("h2").innerHTML = Inspiration.title.rendered;
+					klon.querySelector("h1").innerHTML = Inspiration.title.rendered;
 					klon.querySelector(".big_img").innerHTML = '<img src="' + Inspiration.better_featured_image.source_url + '" />'
 					console.log("jeg virker");
 
@@ -126,7 +127,6 @@
 				}
 			});
 		}
-
 	</script>
 </body>
 

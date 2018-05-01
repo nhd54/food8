@@ -133,7 +133,7 @@
 			console.log(urlid)
 			let single = Restauranter.find(Restaurant => {
 				// hvis my_id = ret.id så hvis indhold i modalvindue
-				if (urlid == Restaurant.id) {
+				if (urlid == Restaurant.title.rendered) {
 					klon.querySelector(".menudetails").innerHTML = Restaurant.acf.Menukort;
 					klon.querySelector(".email").innerHTML = "<br> <h3>Kontakt</h3> <br> " + Restaurant.acf.email;
 					klon.querySelector(".telefon").innerHTML = Restaurant.acf.telefon;
@@ -163,7 +163,6 @@
 				}
 			});
 		}
-
 	</script>
 </body>
 
