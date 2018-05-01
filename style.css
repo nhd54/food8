@@ -324,11 +324,11 @@ nyhed a {
 
 
 .nyhedsbrev {
-    top: 86vh;
-    left: 65vw;
+    top: 80vh;
+    left: 72vw;
     position: fixed;
     z-index: 10;
-    width: 30vw;
+    width: 23vw;
 }
 
 h1 {
