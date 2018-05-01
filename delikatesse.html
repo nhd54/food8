@@ -120,7 +120,7 @@
 			console.log(urlid)
 			let single = Delikatesser.find(Delikatesse => {
 				// hvis my_id = ret.id så hvis indhold i modalvindue
-				if (urlid == Delikatesse.title.rendered) {
+				if (urlid == Delikatesse.acf.sogeord) {
 
 					klon.querySelector(".email").innerHTML = "<br> <h3>Kontakt</h3> <br> " + Delikatesse.acf.email;
 					klon.querySelector(".telefon").innerHTML = Delikatesse.acf.telefon;
@@ -161,6 +161,7 @@
 
 			});
 		}
+
 	</script>
 </body>
 
