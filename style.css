@@ -227,12 +227,12 @@ nyhed a {
 
 .backbutton {
     position: absolute;
-    top: 35vw;
+    top: 26vw;
     left: 2vw;
     background-image: url(images/nav_circles/back_button.png);
     background-size: contain;
-    height: 50px;
-    width: 50px;
+    height: 7vw;
+    width: 7vw;
     border-radius: 50px;
     box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.40);
 }
@@ -328,7 +328,7 @@ nyhed a {
     left: 72vw;
     position: fixed;
     z-index: 10;
-    width: 23vw;
+    width: 20vw;
 }
 
 h1 {
