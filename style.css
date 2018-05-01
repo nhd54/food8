@@ -189,6 +189,8 @@ article a:hover {
 
 .big_img img {
     width: 100%;
+
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.40);
 }
 
 .nyhed p {
@@ -268,7 +270,7 @@ nyhed a {
 }
 
 #menu img {
-    height: 50px;
+    height: 100px;
     text-align: center;
 }
 
@@ -283,7 +285,6 @@ nyhed a {
 #description {
 
     background-color: #fbfbfb66;
-    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.40);
     margin: 10px;
     padding: 2vw;
 
@@ -295,11 +296,7 @@ nyhed a {
 }
 
 .alignnone {
-    padding: 2vw;
-    width: 35vw;
-    height: 50vw;
-
-
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.40);
 }
 
 .maps {
@@ -438,7 +435,12 @@ main {
 
 #bord {
     background-color: #475665;
-    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px 0 40px 0;
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.40);
 }
 
 input {
