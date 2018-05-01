@@ -2,49 +2,49 @@
 <html lang="da">
 
 <head>
-
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food8 - Din digitale foodcourt</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 
 </head>
 
 <body>
-	<div class="accordion">
-		<div class="bar1"></div>
-		<div class="bar2"></div>
-		<div class="bar3"></div>
-	</div>
+    <div class="accordion">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
 
 
-	<nav id="normalMenu">
-		<div class="MenuBackdrop"> </div>
-		<div class="buttons">
-			<a href="nyheder.html"><button class="buttonnews">Nyheder</button></a>
-			<a href="restauranter.html"><button class="buttonres">Restauranter</button></a>
-			<a href="delikatesser.html"><button class="buttondeli">Delikatesser</button></a>
-			<a href="inspirationer.html"><button class="buttoninsp">Inspiration</button></a>
+    <nav id="normalMenu">
+        <div class="MenuBackdrop"> </div>
+        <div class="buttons">
+            <a href="nyheder.html"><button class="buttonnews">Nyheder</button></a>
+            <a href="restauranter.html"><button class="buttonres">Restauranter</button></a>
+            <a href="delikatesser.html"><button class="buttondeli">Delikatesser</button></a>
+            <a href="inspirationer.html"><button class="buttoninsp">Inspiration</button></a>
 
-		</div>
-	</nav>
-	<header>
-		<div class="indexicon"><a href="index.html"><img src="images/logo/logo.png" alt="icon"></a></div>
-	</header>
-	<nav>
+        </div>
+    </nav>
+    <header>
+        <div class="indexicon"><a href="index.html"><img src="images/logo/logo.png" alt="icon"></a></div>
+    </header>
+    <nav>
 
-		<div id="button1"></div>
-		<div id="button2"></div>
-		<div id="button3"></div>
-		<div id="button4"></div>
-	</nav>
-
-
-	<section id="newscontainerbg">
+        <div id="button1"></div>
+        <div id="button2"></div>
+        <div id="button3"></div>
+        <div id="button4"></div>
+    </nav>
 
 
+    <section id="newscontainerbg">
 
-		<template>
+
+
+        <template>
 <div id="newscontainerbg">
          <div class="newscontainer">
 		<article class="newsarticle">
@@ -60,85 +60,85 @@
 	</template>
 
 
-	</section>
+    </section>
 
 
 
-	<div class="nyhedsbrev">
-		<img src="images/nav_circles/nhs_brev.svg" alt="">
-	</div>
+    <div class="nyhedsbrev">
+        <img src="images/nav_circles/nhs_brev.svg" alt="">
+    </div>
 
 
 
 
 
-	<footer>
-		<div class="footercontent"> <a href="om.html"> OM <img src="images/logo/logo.png" class="footericon" alt="">  </a></div>
+    <footer>
+        <div class="footercontent"> <a href="om.html"> OM <img src="images/logo/logo.png" class="footericon" alt="">  </a></div>
 
 
-		<p>
-			info@food8.dk<br> Food8 ApS — Langelinie 10, 2100 København Ø<br> — CVR nr. 39306999<br></p>
-		<img src="images/logo/stroem_logo.png" alt="stroem" class="stroem">
-		<div class="footercontact">
-			<a href="https://www.facebook.com/food8dk/"><img src="images/icon/facebook.png" alt="facelogo"></a>
-			<a href="https://www.instagram.com/food8dk/"><img src="images/icon/instagram-colourful-icon.png" alt="instalogo"></a></div>
-	</footer>
+        <p>
+            info@food8.dk<br> Food8 ApS — Langelinie 10, 2100 København Ø<br> — CVR nr. 39306999<br></p>
+        <img src="images/logo/stroem_logo.png" alt="stroem" class="stroem">
+        <div class="footercontact">
+            <a href="https://www.facebook.com/food8dk/"><img src="images/icon/facebook.png" alt="facelogo"></a>
+            <a href="https://www.instagram.com/food8dk/"><img src="images/icon/instagram-colourful-icon.png" alt="instalogo"></a></div>
+    </footer>
 
 
-	<script>
-		let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/nyheder";
-		let Nyheder = [];
-		let display = document.querySelector("section");
-		let template = document.querySelector("template");
+    <script>
+        let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/nyheder";
+        let Nyheder = [];
+        let display = document.querySelector("section");
+        let template = document.querySelector("template");
 
-		document.addEventListener("DOMContentLoaded", hentjson);
+        document.addEventListener("DOMContentLoaded", hentjson);
 
-		async function hentjson() {
+        async function hentjson() {
 
-			let datajson = await fetch(jsonurl);
-			Nyheder = await datajson.json();
-			console.log(Nyheder);
-
-
-			VisNyheder();
-		}
+            let datajson = await fetch(jsonurl);
+            Nyheder = await datajson.json();
+            console.log(Nyheder);
 
 
-		function VisNyheder() {
-
-			Nyheder.forEach(Nyhed => {
-				console.log(Nyhed);
-				let str = Nyhed.content.rendered;
-				let rest = str.substr(0, 250)
-				let klon = template.cloneNode(true).content;
-				console.log(klon);
-				klon.querySelector(".newscontainer").style.backgroundImage = "url(" + Nyhed.better_featured_image.source_url + ")"
-				//klon.querySelector(".newsarticle").css("background-image", "url(" + Nyhed.better_featured_image.source_url + ")");
-				//	klon.querySelector(".newsarticle").style.backgroundImage = url(Nyhed.better_featured_image.source_url);
-				klon.querySelector("h2").innerHTML = Nyhed.title.rendered;
-				klon.querySelector("p").innerHTML = rest + " ...";
-				klon.querySelector(".link").innerHTML = '<a href=nyhed.html?id=' + Nyhed.acf.sogeord + ">Læs Mere</a>";
-
-				display.appendChild(klon);
-
-			});
+            VisNyheder();
+        }
 
 
-		}
-		let acc = document.getElementsByClassName("accordion");
-		var i;
-		for (i = 0; i < acc.length; i++) {
-			acc[i].addEventListener("click", function() {
-				this.classList.toggle("active");
-				let panel = this.nextElementSibling;
-				if (panel.style.display === "inline-block") {
-					panel.style.display = "none";
-				} else {
-					panel.style.display = "inline-block";
-				}
-			});
-		}
-	</script>
+        function VisNyheder() {
+
+            Nyheder.forEach(Nyhed => {
+                console.log(Nyhed);
+                let str = Nyhed.content.rendered;
+                let rest = str.substr(0, 250)
+                let klon = template.cloneNode(true).content;
+                console.log(klon);
+                klon.querySelector(".newscontainer").style.backgroundImage = "url(" + Nyhed.better_featured_image.source_url + ")"
+                //klon.querySelector(".newsarticle").css("background-image", "url(" + Nyhed.better_featured_image.source_url + ")");
+                //	klon.querySelector(".newsarticle").style.backgroundImage = url(Nyhed.better_featured_image.source_url);
+                klon.querySelector("h2").innerHTML = Nyhed.title.rendered;
+                klon.querySelector("p").innerHTML = rest + " ...";
+                klon.querySelector(".link").innerHTML = '<a href=nyhed.html?id=' + Nyhed.acf.sogeord + ">Læs Mere</a>";
+
+                display.appendChild(klon);
+
+            });
+
+
+        }
+        let acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                let panel = this.nextElementSibling;
+                if (panel.style.display === "inline-block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "inline-block";
+                }
+            });
+        }
+    </script>
 
 </body>
 

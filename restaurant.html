@@ -2,47 +2,48 @@
 <html id="restaurant" lang="da">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Food8 - Din digitale foodcourt</title>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food8 - Din digitale foodcourt</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
 <body>
 
-	<div class="accordion">
-		<div class="bar1"></div>
-		<div class="bar2"></div>
-		<div class="bar3"></div>
-	</div>
+    <div class="accordion">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
 
 
-	<nav id="normalMenu">
-		<div class="MenuBackdrop"> </div>
-		<div class="buttons">
-			<a href="nyheder.html"><button class="buttonnews">Nyheder</button></a>
-			<a href="restauranter.html"><button class="buttonres">Restauranter</button></a>
-			<a href="delikatesser.html"><button class="buttondeli">Delikatesser</button></a>
-			<a href="inspirationer.html"><button class="buttoninsp">Inspiration</button></a>
+    <nav id="normalMenu">
+        <div class="MenuBackdrop"> </div>
+        <div class="buttons">
+            <a href="nyheder.html"><button class="buttonnews">Nyheder</button></a>
+            <a href="restauranter.html"><button class="buttonres">Restauranter</button></a>
+            <a href="delikatesser.html"><button class="buttondeli">Delikatesser</button></a>
+            <a href="inspirationer.html"><button class="buttoninsp">Inspiration</button></a>
 
-		</div>
-	</nav>
+        </div>
+    </nav>
 
-	<a href="restauranter.html">
-		<div class="backbutton"></div>
-	</a>
-	<header>
-		<div class="indexicon"><a href="index.html"><img src="images/logo/logo.png" alt="icon"></a></div>
-	</header>
-	<nav>
+    <a href="restauranter.html">
+        <div class="backbutton"></div>
+    </a>
+    <header>
+        <div class="indexicon"><a href="index.html"><img src="images/logo/logo.png" alt="icon"></a></div>
+    </header>
+    <nav>
 
-		<div id="button1"></div>
-		<div id="button2"></div>
-		<div id="button3"></div>
-		<div id="button4"></div>
-	</nav>
-	<section>
-		<template>
+        <div id="button1"></div>
+        <div id="button2"></div>
+        <div id="button3"></div>
+        <div id="button4"></div>
+    </nav>
+    <section>
+        <template>
 
    <section id="banner">
    	 <div class="big_img"></div>
@@ -79,91 +80,91 @@
 
     </template>
 
-	</section>
+    </section>
 
-	<section id="bord">
-		<div class="bordbook">
-			<h3 class="bord">
-				Book et bord
-			</h3>
-			<p class="bord"> Skal du ud og spise? </p>
-			<input name="antal" placeholder="antal gæster" type="number">
-			<br>
-			<input name="dato" placeholder="vælg en dato" type="date">
-			<br>
-			<input type="submit" value="Submit">
-		</div>
-	</section>
-
-
-	<div class="nyhedsbrev">
-		<img src="images/nav_circles/nhs_brev.svg" alt="">
-	</div>
-
-	<footer>
-		<div class="footercontent"> <a href="om.html"> OM <img src="images/logo/logo.png" class="footericon" alt="">  </a></div>
+    <section id="bord">
+        <div class="bordbook">
+            <h3 class="bord">
+                Book et bord
+            </h3>
+            <p class="bord"> Skal du ud og spise? </p>
+            <input name="antal" placeholder="antal gæster" type="number">
+            <br>
+            <input name="dato" placeholder="vælg en dato" type="date">
+            <br>
+            <input type="submit" value="Submit">
+        </div>
+    </section>
 
 
-		<p>
-			info@food8.dk<br> Food8 ApS — Langelinie 10, 2100 København Ø<br> — CVR nr. 39306999<br></p>
-		<img src="images/logo/stroem_logo.png" alt="stroem" class="stroem">
-		<div class="footercontact">
-			<a href="https://www.facebook.com/food8dk/"><img src="images/icon/facebook.png" alt="facelogo"></a>
-			<a href="https://www.instagram.com/food8dk/"><img src="images/icon/instagram-colourful-icon.png" alt="instalogo"></a></div>
-	</footer>
+    <div class="nyhedsbrev">
+        <img src="images/nav_circles/nhs_brev.svg" alt="">
+    </div>
+
+    <footer>
+        <div class="footercontent"> <a href="om.html"> OM <img src="images/logo/logo.png" class="footericon" alt="">  </a></div>
 
 
-	<script>
-		let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/restaurant";
-		let Restauranter = [];
-		let display = document.querySelector("section");
-		let template = document.querySelector("template");
-		document.addEventListener("DOMContentLoaded", hentjson);
-		async function hentjson() {
-			let datajson = await fetch(jsonurl);
-			Restauranter = await datajson.json();
-			console.log(Restauranter);
-			hvisenkelt();
-		}
+        <p>
+            info@food8.dk<br> Food8 ApS — Langelinie 10, 2100 København Ø<br> — CVR nr. 39306999<br></p>
+        <img src="images/logo/stroem_logo.png" alt="stroem" class="stroem">
+        <div class="footercontact">
+            <a href="https://www.facebook.com/food8dk/"><img src="images/icon/facebook.png" alt="facelogo"></a>
+            <a href="https://www.instagram.com/food8dk/"><img src="images/icon/instagram-colourful-icon.png" alt="instalogo"></a></div>
+    </footer>
 
-		function hvisenkelt() {
-			let urlParams = new URLSearchParams(window.location.search);
-			let urlid = urlParams.get("id");
-			let klon = template.cloneNode(true).content;
-			console.log(urlid)
-			let single = Restauranter.find(Restaurant => {
-				// hvis my_id = ret.id så hvis indhold i modalvindue
-				if (urlid == Restaurant.title.rendered) {
-					klon.querySelector(".menudetails").innerHTML = Restaurant.acf.Menukort;
-					klon.querySelector(".email").innerHTML = "<br> <h3>Kontakt</h3> <br> " + Restaurant.acf.email;
-					klon.querySelector(".telefon").innerHTML = Restaurant.acf.telefon;
-					klon.querySelector("h1").innerHTML = Restaurant.title.rendered;
-					klon.querySelector(".adress").innerHTML = "<br> <h3>Kontakt</h3> <br> " + Restaurant.acf.adresse;
-					klon.querySelector(".report").innerHTML = Restaurant.acf.kontrolreport;
-					klon.querySelector(".open").innerHTML = "<h3>Åbningstider</h3> " + Restaurant.acf.åbninstider;
-					klon.querySelector("p").innerHTML = Restaurant.content.rendered;
-					klon.querySelector(".maps").innerHTML = Restaurant.acf.maps_test;
-					klon.querySelector(".big_img").innerHTML = '<img src="' + Restaurant.better_featured_image.source_url + ' " />'
-					console.log("jeg virker");
-					display.appendChild(klon);
-				}
-			});
-		}
 
-		let acc = document.getElementsByClassName("accordion");
-		var i;
-		for (i = 0; i < acc.length; i++) {
-			acc[i].addEventListener("click", function() {
-				this.classList.toggle("active");
-				let panel = this.nextElementSibling;
-				if (panel.style.display === "inline-block") {
-					panel.style.display = "none";
-				} else {
-					panel.style.display = "inline-block";
-				}
-			});
-		}
-	</script>
+    <script>
+        let jsonurl = "http://nicklasdegnebolig.dk/kea/2semester/cms/food8/wordpress/wp-json/wp/v2/restaurant";
+        let Restauranter = [];
+        let display = document.querySelector("section");
+        let template = document.querySelector("template");
+        document.addEventListener("DOMContentLoaded", hentjson);
+        async function hentjson() {
+            let datajson = await fetch(jsonurl);
+            Restauranter = await datajson.json();
+            console.log(Restauranter);
+            hvisenkelt();
+        }
+
+        function hvisenkelt() {
+            let urlParams = new URLSearchParams(window.location.search);
+            let urlid = urlParams.get("id");
+            let klon = template.cloneNode(true).content;
+            console.log(urlid)
+            let single = Restauranter.find(Restaurant => {
+                // hvis my_id = ret.id så hvis indhold i modalvindue
+                if (urlid == Restaurant.title.rendered) {
+                    klon.querySelector(".menudetails").innerHTML = Restaurant.acf.Menukort;
+                    klon.querySelector(".email").innerHTML = "<br> <h3>Kontakt</h3> <br> " + Restaurant.acf.email;
+                    klon.querySelector(".telefon").innerHTML = Restaurant.acf.telefon;
+                    klon.querySelector("h1").innerHTML = Restaurant.title.rendered;
+                    klon.querySelector(".adress").innerHTML = "<br> <h3>Kontakt</h3> <br> " + Restaurant.acf.adresse;
+                    klon.querySelector(".report").innerHTML = Restaurant.acf.kontrolreport;
+                    klon.querySelector(".open").innerHTML = "<h3>Åbningstider</h3> " + Restaurant.acf.åbninstider;
+                    klon.querySelector("p").innerHTML = Restaurant.content.rendered;
+                    klon.querySelector(".maps").innerHTML = Restaurant.acf.maps_test;
+                    klon.querySelector(".big_img").innerHTML = '<img src="' + Restaurant.better_featured_image.source_url + ' " />'
+                    console.log("jeg virker");
+                    display.appendChild(klon);
+                }
+            });
+        }
+
+        let acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                let panel = this.nextElementSibling;
+                if (panel.style.display === "inline-block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "inline-block";
+                }
+            });
+        }
+    </script>
 </body>
 
 
