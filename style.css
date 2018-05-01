@@ -260,7 +260,7 @@ nyhed a {
 
 #menu {
     text-align: center;
-    margin: 10px;
+
     margin-top: 0;
     margin-bottom: 0;
     background-color: rgba(176, 203, 209, 0.59);
@@ -275,7 +275,7 @@ nyhed a {
 }
 
 #contact {
-    margin: 10px;
+    margin: 35px 10px 10px 10px;
     padding: 2vw;
     background-color: #EDE5DF;
     box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.40);
@@ -283,10 +283,8 @@ nyhed a {
 }
 
 #description {
-
     background-color: #fbfbfb66;
-    margin: 10px;
-    padding: 2vw;
+    padding: 6vw 2vw 2vw 2vw;
 
 }
 
@@ -297,6 +295,9 @@ nyhed a {
 
 .alignnone {
     box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.40);
+        width: 100%;
+    height: 100%;
+    margin: 20px 0 0 0;
 }
 
 .maps {
