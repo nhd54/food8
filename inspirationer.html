@@ -141,13 +141,15 @@
 			news[i].addEventListener("click", function() {
 				console.log("jeg virker");
 
-				//let panel = this.nextElementSibling;
-				document.getElementById("newsletter").style.display = "block";
-
+				let panel = this.nextElementSibling;
+				if (panel.style.display === "block") {
+					panel.style.display = "none";
+				} else {
+					panel.style.display = "block";
+				}
 
 			});
 		}
-
 	</script>
 </body>
 
